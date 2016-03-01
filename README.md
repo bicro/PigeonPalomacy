@@ -11,3 +11,6 @@ CS169-15
 
 ### Travis CI
 ![Build Status](https://travis-ci.org/bicro/PigeonPalomacy.svg?branch=master)
+
+### Pivotal Tracker
+[Link](https://www.pivotaltracker.com/n/projects/1546011)
