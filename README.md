@@ -10,4 +10,4 @@ CS169-15
 
 
 ### Travis CI
-[![Build Status](https://travis-ci.org/bicro/PigeonPalomacy.svg?branch=master)]
+![Build Status](https://travis-ci.org/bicro/PigeonPalomacy.svg?branch=master)
