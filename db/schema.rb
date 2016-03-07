@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160307034803) do
+ActiveRecord::Schema.define(version: 20160307045728) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
@@ -28,6 +28,21 @@ ActiveRecord::Schema.define(version: 20160307034803) do
     t.text     "subcontent", default: ""
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+  end
+
+  create_table "submission_answers", force: :cascade do |t|
+    t.integer  "submission_id"
+    t.integer  "answer_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "submission_answers", ["answer_id"], name: "index_submission_answers_on_answer_id"
+  add_index "submission_answers", ["submission_id"], name: "index_submission_answers_on_submission_id"
+
+  create_table "submissions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

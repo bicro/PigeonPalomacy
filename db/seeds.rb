@@ -13,6 +13,6 @@ Question.create({content: "Can it fly?"}).add_answers(["Yes", "No"])
 
 Question.create({content: "Is it injured"}).add_answers(["Yes", "No"])
 
-Question.create({content: "It is a King Pigeon?"}).add_answers(["Yes", "No"])
+Question.create({content: "Is it a King Pigeon?"}).add_answers(["Yes", "No"])
 
 Question.create({content: "Does it have a numbered band."}).add_answers(["Yes", "No"])

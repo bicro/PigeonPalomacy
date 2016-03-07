@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root 'questions#index'
+  root 'submissions#new'
+  resources :submissions
   resources :questions
 end
