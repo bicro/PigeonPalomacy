@@ -6,7 +6,7 @@ describe Question do
     end
     
     it "should have content filled in" do
-       @question.content.should eq("Am I ready?"), "wtf bro"
+       @question.content.should eq("Am I ready?")
     end
     
     it "should have no answers when new" do

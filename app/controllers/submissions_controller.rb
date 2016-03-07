@@ -1,45 +1,39 @@
 class SubmissionsController < ApplicationController
   before_action :set_submission, only: [:show, :edit, :update, :destroy]
 
-  # GET /submissions
-  # GET /submissions.json
   def index
     @submissions = Submission.all
   end
 
-  # GET /submissions/1
-  # GET /submissions/1.json
   def show
+    @submission = Submission.find(params[:id])
+    @expert = @submission.expert
   end
 
-  # GET /submissions/new
   def new
     @questions = Question.all
     @submission = Submission.new
   end
 
-  # GET /submissions/1/edit
   def edit
   end
 
-  # POST /submissions
-  # POST /submissions.json
   def create
-    @submission = Submission.new(submission_params)
+    @submission = Submission.create(submission_params)
+    @submission.ip = request.remote_ip
 
-    respond_to do |format|
-      if @submission.save
-        format.html { redirect_to @submission, notice: 'Submission was successfully created.' }
-        format.json { render :show, status: :created, location: @submission }
-      else
-        format.html { render :new }
-        format.json { render json: @submission.errors, status: :unprocessable_entity }
-      end
+    Question.uniq.pluck(:id).each do |qid|
+      aid = params[qid]
+      @submission.add_answer(aid)
+    end
+
+    if @submission.save
+      redirect_to submission_path(@submission)
+    else
+      redirect_to new_submissions_path(@submision)
     end
   end
 
-  # PATCH/PUT /submissions/1
-  # PATCH/PUT /submissions/1.json
   def update
     respond_to do |format|
       if @submission.update(submission_params)

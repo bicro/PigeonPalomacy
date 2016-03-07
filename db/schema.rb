@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160307060607) do
+ActiveRecord::Schema.define(version: 20160307070159) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id"
     t.string   "content"
-    t.string   "img_url",     default: ""
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "img_url",      default: ""
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.float    "expert_score"
   end
 
   add_index "answers", ["question_id"], name: "index_answers_on_question_id"
