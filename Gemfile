@@ -30,7 +30,7 @@ gem 'devise'
 
 gem 'sqlite3'
 
-gem 'foundation-rails'
+gem 'foundation-rails', '5.4.5'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
