@@ -1,0 +1,12 @@
+<div class="question">
+    <p class="content">
+        <%= question.content %>
+    </p>
+    <ul class="answers">
+        <% question.answers.each do |a| %>
+          <li>
+              <%= a.content %>
+          </li>
+        <% end %>
+    </ul>
+</div>
