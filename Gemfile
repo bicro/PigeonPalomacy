@@ -31,8 +31,6 @@ gem 'rack-throttle'
 
 gem 'devise'
 
-gem 'sqlite3'
-
 gem 'foundation-rails', '5.4.5'
 
 # Use ActiveModel has_secure_password
