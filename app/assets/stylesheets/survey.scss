@@ -1,3 +1,37 @@
 // Place all the styles related to the Survey controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.nav {
+    background-color: #FFFFFF;
+    height: 60px;
+    box-shadow: 0 0 1px rgba(41, 41, 41, 0.15);
+    padding: 12px 20px;
+}
+
+.nav-fb {
+    float: right;
+}
+
+.survey {
+    width: 540px;
+    left: calc(50% - 270px);
+    position: relative;
+    top: 60px;
+    margin-bottom: 40px;
+}
+
+.survey-card {
+/*    height: 97px;*/
+    background-color: #FFFFFF;
+    box-shadow: 0 0 1px 0 rgba(41, 41, 41, 0.2);
+    border-radius: 3px;
+    padding: 20px 20px 25px 20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.survey-description {
+    margin-bottom: 20px;
+}
+
+

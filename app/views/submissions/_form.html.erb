@@ -1,15 +1,18 @@
-<form action="<%= submissions_path(@submission) %>" method="POST">
-<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<form class="survey-form" action="<%= submissions_path(@submission) %>" method="POST">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <% @questions.each do |q| %>
-      <%= render partial: "/questions/question", locals: {question: q} %>
-      <ul class="answers">
-          <% q.answers.each do |a| %>
-            <li>
-                <%= label_tag a.content %>
-                <%= radio_button_tag q.id, a.id %>
-            </li>
-          <% end %>
-      </ul>
+  <div class="survey-card">
+    <%= render partial: "/questions/question", locals: {question: q} %>
+    <ul class="answers">
+      <% q.answers.each do |a| %>
+      <li class="answer">
+        <%= label_tag a.content %>
+        <%= radio_button_tag q.id, a.id, class: "radio-button" %>
+      </li>
+      <% end %>
+    </ul>        
+  </div>
   <% end %>
-  <%= submit_tag "Find Expert" %>
+  <%= submit_tag "Find Expert", class: "button survey-submit" %>
 </form>
+
