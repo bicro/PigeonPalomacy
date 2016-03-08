@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160307042640) do
+ActiveRecord::Schema.define(version: 20160307070159) do
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -33,5 +33,41 @@ ActiveRecord::Schema.define(version: 20160307042640) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "answers", force: :cascade do |t|
+    t.integer  "question_id"
+    t.string   "content"
+    t.string   "img_url",      default: ""
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.float    "expert_score"
+  end
+
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "content"
+    t.text     "subcontent", default: ""
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "submission_answers", force: :cascade do |t|
+    t.integer  "submission_id"
+    t.integer  "answer_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "submission_answers", ["answer_id"], name: "index_submission_answers_on_answer_id"
+  add_index "submission_answers", ["submission_id"], name: "index_submission_answers_on_submission_id"
+
+  create_table "submissions", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "ip"
+  end
 
 end
