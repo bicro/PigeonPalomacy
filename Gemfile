@@ -29,6 +29,10 @@ gem 'geocoder'
 gem 'simplecov', :require => false
 gem 'rack-throttle'
 
+gem 'devise'
+
+gem 'foundation-rails', '5.4.5'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

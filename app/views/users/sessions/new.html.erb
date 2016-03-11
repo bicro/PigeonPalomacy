@@ -1,0 +1,52 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "registration"}) do |f| %>
+  <div class="row">
+    <div class="large-6 large-centered columns">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="title op-8">Log In</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns op-8">
+          Thanks for volunteering to become an expert for Palomacy. You can login to manage your personal information.
+        </div>
+      </div>
+      <div class=row>
+        <div class="large-11 large-centered columns">
+          <div class="row">
+            <div class="large-12 columns">
+              <%= devise_error_messages! %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="field">
+                <%= f.label :email, class: "field_label required"%><br />
+                <%= f.email_field :email, placeholder: "victoriabian@gmail.com", class: "registration-field-box-blue" %>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="field">
+                <%= f.label :password, class: "field_label required"  %>
+                <%= f.password_field :password, placeholder: "Password", autocomplete: "off", class: "registration-field-box-green"  %>
+              </div>
+            </div>
+          </div>
+          <% if devise_mapping.rememberable? -%>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end -%>
+          <div class="actions">
+            <%= f.submit "Log In", class: "button registration-button" %>
+          </div>
+          <%= render "users/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
