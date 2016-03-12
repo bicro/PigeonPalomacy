@@ -25,4 +25,7 @@ Then /^"([^\"]*)" should be registered$/ do |name|
   User.where(:name => name).size.should eq(1)
 end
 
+Then /^email of "([^\"]*)" should be "([^\"]*)"$/ do |name, value|
+  User.where(:name => name).first.email.should eq(value)
+end
 

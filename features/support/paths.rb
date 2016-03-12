@@ -17,6 +17,7 @@ module NavigationHelpers
     when /^the signup page$/ then '/users/sign_up'
     when /^the signin page$/ then '/users/sign_in'
     when /^the survey page$/ then "/"
+    when /^the edit page$/ then "/users/edit"
 
     else
       begin
