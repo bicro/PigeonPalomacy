@@ -3,3 +3,16 @@ rvm:
   - 2.3.0
 script:
   - RAILS_ENV=test bundle exec rake db:migrate 
+addons:
+  code_climate:
+    repo_token:
+      secure:
+	"YmbpXpxWMskbJfS0EfKP0fSnFw+4xOGsXOwDAS7QYGpM6O0R2HKfdNBCxwUzIUMS3Tnw 
+afyZQgSFhBxoYLEv8OjoZ3rPTyryRwwbVuCG+C4ZNgbXjuhzyCr4m3AZ8SBoRLWLZUbkL+qzxLQaiVu 
+cRt4NZXp65IvyGhNxLKTZFAr5a0JVVHRUOVHVi2Xr3GreTCP5NXKRaB3sy6u+T3UjEo7ApIDFL1FVW1 
+NKtaEL9AgiKsbgTUBzAt3Jw8R7ZYGu2hzNnYCAV7/UFZkh0RUEia0ZDddDdLe0bvw3CvHRdl9ABdbgT 
+LbFsgvAuAd4vT9EtqvcB0F8DZ0RtgyR3wUPpLaMZ74IrfdtcZyqTu2C4Wi+hoWCcn191IoOqnGEk6jo 
+lOkpySAtpoCog7Mp75g7nsx8bdhmbCZ75qNtk1klherib7ER36IGHbHvvQ1y71WEQoOZb8cyk3LRc1h 
+VKNxXDpq1QNBXgK/k0d8gZQmbBiCdLlP8UxObESw/LqR781K2/MDIcwbvDjPw1phvqtv93bq356MDRc 
+CRhWxhvZQ2pqU+i+LuFqyceIfbVP7KXMXb+fMmVCmvZhLYpoyDGJ6z16Tw3DFNl6kwuL1u1RXa5a7OV
+ojtsesLb6lkHb2lTXhwlKVfKvIaZ1eH2LyIwxQvR3osFKsTL0bztjhz5TfhRSY="
