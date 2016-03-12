@@ -45,6 +45,7 @@ gem 'foundation-rails', '5.4.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'database_cleaner', '1.4.1'
 end
 
 group :development do
