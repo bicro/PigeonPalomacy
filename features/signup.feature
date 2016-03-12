@@ -8,16 +8,17 @@ Background: users in database
 
 Scenario: As a pigeon expert I want to join the pigeon palomacy rescue effort so that I can save the lives of helpless pigeons
  Given I am on the signup page
- When I enter the following information:
+ When I enter the following information to sign up:
  | email                    | name         | phone      | address             | password    |
  | robert@berkeley.edu      | Robert Lin   | 5105410000 | #12 2715 Dwight Way | robert0000  |
- When I press Submit
+ When I press "Submit"
+ Then "Robert Lin" should be registered
  Then I should be on the home page
 
 Scenario: As a pigeon expert I want to log in to change my address so that I can conduct pigeon rescue in a different area
  Given I am on the signin page
- When I enter the following information:
+ When I enter the following information to sign in:
  | email                     |  password    |
  | linfeng@berkeley.edu      |  linfeng0000 |
- When I press Sign In
+ When I press "Log In"
  Then I should be on the home page
