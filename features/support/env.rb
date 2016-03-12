@@ -4,8 +4,8 @@ require File.expand_path("../../../config/environment", __FILE__)
 require 'simplecov'
 SimpleCov.start 'rails'
 
-require 'capybara'
 require 'database_cleaner'
+require 'cucumber/rails'
 
 begin
   DatabaseCleaner.strategy = :transaction
