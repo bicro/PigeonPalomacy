@@ -24,3 +24,5 @@ end
 Then /^"([^\"]*)" should be registered$/ do |name|
   User.where(:name => name).size.should eq(1)
 end
+
+
