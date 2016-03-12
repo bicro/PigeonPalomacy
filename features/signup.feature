@@ -22,3 +22,9 @@ Scenario: As a pigeon expert I want to log in to change my address so that I can
  | linfeng@berkeley.edu      |  linfeng0000 |
  When I press "Log In"
  Then I should be on the home page
+ When I am on the edit page
+ When I fill in "Email" with "linfeng@gmail.com"
+ When I fill in "Current password" with "linfeng0000"
+ Then I press "Update"
+ Then email of "Feng Lin" should be "linfeng@gmail.com"
+
