@@ -2,3 +2,9 @@
 
 <%= link_to 'Edit', edit_submission_path(@submission) %> |
 <%= link_to 'Back', submissions_path %>
+
+<% if @submission.need_expert? %>
+  Your pigeon needs help.
+<% else %>
+  Your pigeon is fine.
+<% end %>
