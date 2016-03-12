@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
  */
 
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,500,600,700');
