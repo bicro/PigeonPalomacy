@@ -3,6 +3,8 @@ rvm:
   - 2.3.0
 script:
   - RAILS_ENV=test bundle exec rake db:migrate 
+  - rspec
+  - cucumber
 addons:
   code_climate:
     repo_token:
