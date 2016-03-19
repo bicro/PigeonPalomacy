@@ -7,7 +7,7 @@ CS169-15
 [![Issue Count](https://codeclimate.com/github/bicro/PigeonPalomacy/badges/issue_count.svg)](https://codeclimate.com/github/bicro/PigeonPalomacy)
 
 ### Travis CI
-![Build Status](https://travis-ci.org/bicro/PigeonPalomacy.svg?branch=dev)
+[![Build Status](https://travis-ci.org/bicro/PigeonPalomacy.svg?branch=dev)](https://travis-ci.org/bicro/PigeonPalomacy)
 
 ### Pivotal Tracker
 [Link](https://www.pivotaltracker.com/n/projects/1546011)
