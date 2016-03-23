@@ -28,6 +28,8 @@ gem 'rack-throttle'
 
 gem 'devise'
 
+gem 'activeadmin', github: 'activeadmin'
+
 gem 'foundation-rails', '5.4.5'
 
 # Use ActiveModel has_secure_password
