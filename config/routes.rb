@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :submissions
   resources :questions
   devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_scope :user do
+    post "users/admin_approve_user/:id", to: "users#approve_user", :as => "admin_approve_user"
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
