@@ -20,6 +20,20 @@ index do
     actions
 end
 
+show do
+    attributes_table do
+        row :content
+        row :subcontent
+    end
+    panel "Answers" do
+        table_for question.answers do
+            column :content
+            column :expert_score
+            column :img_url
+        end
+    end
+end
+
 form do |f|
     f.semantic_errors
     f.inputs 'Question Details' do
