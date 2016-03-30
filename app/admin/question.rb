@@ -14,6 +14,12 @@ ActiveAdmin.register Question do
 # end
 permit_params :content, :subcontent, answers_attributes: [:id, :question_id, :img_url, :expert_score, :content]
 
+index do
+    column :content
+    column :subcontent
+    actions
+end
+
 form do |f|
     f.semantic_errors
     f.inputs 'Question Details' do
