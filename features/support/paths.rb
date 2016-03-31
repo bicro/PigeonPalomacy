@@ -16,6 +16,8 @@ module NavigationHelpers
     when /^the home\s?page$/ then '/'
     when /^the signup page$/ then '/users/sign_up'
     when /^the signin page$/ then '/users/sign_in'
+    when /^the admin page$/ then '/admin'
+    when /^the admin login page$/ then '/admin/login'
     when /^the survey page$/ then "/"
     when /^the edit page$/ then "/users/edit"
 

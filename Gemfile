@@ -55,6 +55,7 @@ group :test do
   gem 'cucumber-rails-training-wheels'
   gem 'simplecov', :require => false
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
 
 group :development do

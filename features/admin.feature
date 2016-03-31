@@ -1,0 +1,46 @@
+Feature: Admin should be able to login, see and edit questions
+  
+Background: 
+  Given the following questions exist:
+   | content | id |
+   | Is it hanging around persistently and seems to be asking for help? | 1 |
+   | Can it fly? | 2 |
+   | Is it injured? | 3 |
+   | Is it a King Pigeon? | 4 |
+   | Does it have a numbered band? | 5 |
+  And the following answers exist:
+   | content | expert_score | question_id | id |
+   | Yes | 1 | 1 | 1 |
+   | No | 0 | 1 | 2 |
+   | Yes | 0 | 2 | 3 |
+   | No | 1 | 2 | 4 |
+   | Yes | 1 | 3 | 5 |
+   | No | 0 | 3 | 6 |
+   | Yes | 1 | 4 | 7 |
+   | No | 0 | 4 | 8 |
+   | Yes | 1 | 5 | 9 |
+   | No | 0 | 5 | 10 |
+  And the following admins exist:
+    | email | password |
+    | admin2@example.com | password |
+  
+Scenario: Admin logs in to account
+    Given I am on the admin login page
+    When I fill in "Email" with "admin2@example.com"
+    And I fill in "Password" with "password"
+    And I press "Login"
+    Then I should be on the admin page
+    
+Scenario: Admin sees questions
+    Given I am logged in and on the admin page
+    And I follow "Questions"
+    Then I should see "Can it fly?"
+    And I should see "Is it injured?"
+    And I should see "Is it a King Pigeon?"
+    
+@javascript
+Scenario: Admin deletes question:
+  Given I am logged in and on the admin page 
+  And I follow "Questions"
+  And I delete the first question
+  Then I should not see "Does it have a numbered band?"
