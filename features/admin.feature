@@ -37,6 +37,16 @@ Scenario: Admin sees questions
     Then I should see "Can it fly?"
     And I should see "Is it injured?"
     And I should see "Is it a King Pigeon?"
+
+Scenario: Admin adds answer to existing question
+    Given I am logged in and on the admin page
+    And I follow "Questions"
+    And I follow the first question
+    And I follow "Edit Question"
+    And I follow "Add Answer"
+    And I fill in the last "Content*" with "Answer blah blah"
+    And I press "Update Question"
+    Then I should see "Answer blah blah"
     
 @javascript
 Scenario: Admin deletes question:

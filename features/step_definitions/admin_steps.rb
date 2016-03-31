@@ -15,9 +15,15 @@ Given /^I am logged in and on the admin page$/ do
 end
 
 Given /^I delete the first question$/ do 
-#  Capybara.javascript_driver = :selenium
   first(:link, "Delete").click
-  #alert = page.driver.browser.switch_to.alert
-  #alert.accept
-  page.evaluate_script('window.confirm = function() { return true; }')
+  alert = page.driver.browser.switch_to.alert
+  alert.accept
+end
+
+Given /^I follow the first question$/ do 
+  first(:link, "View").click
+end
+
+Given /^I fill in the last "(.*?)" with "(.*?)"$/ do  |field, fill|
+  all(:field, field).last.set(fill)
 end
