@@ -28,6 +28,8 @@ gem 'rack-throttle'
 
 gem 'devise'
 
+gem 'activeadmin', github: 'activeadmin'
+
 gem 'foundation-rails', '5.4.5'
 
 # Use ActiveModel has_secure_password
@@ -49,10 +51,12 @@ group :development, :test do
 end
 
 group :test do
+  gem 'rspec-rails'
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'simplecov', :require => false
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
 
 group :development do

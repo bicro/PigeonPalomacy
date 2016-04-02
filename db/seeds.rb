@@ -21,3 +21,5 @@ Question.create({content: "Is it a King Pigeon?"}).add_answers([{content: "Yes",
 
 Question.create({content: "Does it have a numbered band."}).add_answers([{content: "Yes", expert_score: 1}, 
                                                                          {content:"No", expert_score: 0}])
+                                                                         
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

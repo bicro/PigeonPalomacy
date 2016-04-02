@@ -1,6 +1,8 @@
 class Question < ActiveRecord::Base
     has_many :answers
     
+    accepts_nested_attributes_for :answers
+    
     validates :content, presence: true
 
     def add_answers arr
