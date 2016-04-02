@@ -19,6 +19,22 @@ describe Admin::QuestionsController, type: :controller do
       expect(assigns(:questions)).to eq([a_question])
     end
   end
+  
+  describe "GET show" do
+    it "displays details of a question" do
+      a_question = Question.create({content: "Can it swim?"}) 
+      get :show, :id => a_question.id
+      expect(assigns(:question)).to eq(a_question)
+    end
+  end
+  
+  describe "GET edit" do
+    it "edits details of a question" do
+      a_question = Question.create({content: "Can it swim?"}) 
+      get :edit, :id => a_question.id
+      expect(assigns(:question)).to eq(a_question)
+    end
+  end
     
 
 end
