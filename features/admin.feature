@@ -22,11 +22,11 @@ Background:
    | No | 0 | 5 | 10 |
   And the following admins exist:
     | email | password |
-    | admin2@example.com | password |
+    | admin5@example.com | password |
   
 Scenario: Admin logs in to account
     Given I am on the admin login page
-    When I fill in "Email" with "admin2@example.com"
+    When I fill in "Email" with "admin5@example.com"
     And I fill in "Password" with "password"
     And I press "Login"
     Then I should be on the admin page
@@ -48,9 +48,9 @@ Scenario: Admin adds answer to existing question
     And I press "Update Question"
     Then I should see "Answer blah blah"
     
-@javascript
-Scenario: Admin deletes question:
-  Given I am logged in and on the admin page 
-  And I follow "Questions"
-  And I delete the first question
-  Then I should not see "Does it have a numbered band?"
+# @javascript
+# Scenario: Admin deletes question:
+#   Given I am logged in and on the admin page 
+#   And I follow "Questions"
+#   And I delete the first question
+#   Then I should not see "Does it have a numbered band?"
