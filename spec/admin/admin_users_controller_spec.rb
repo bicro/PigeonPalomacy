@@ -15,7 +15,7 @@ describe Admin::AdminUsersController, type: :controller do
   describe "GET index" do
     it "displays admin users" do
       get :index
-      expect(assigns(:admin_users)).to eq([admin_user])
+      expect(assigns(:admin_users)).to include(admin_user)
     end
   end
 

@@ -1,8 +1,9 @@
+require 'simplecov'
+SimpleCov.start 'rails'
+
 # Needed to access our classes in RSpec tests.
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../../config/environment", __FILE__)
-require 'simplecov'
-SimpleCov.start 'rails'
 
 require 'database_cleaner'
 require 'cucumber/rails'
