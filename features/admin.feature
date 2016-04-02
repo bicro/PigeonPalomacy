@@ -22,11 +22,11 @@ Background:
    | No | 0 | 5 | 10 |
   And the following admins exist:
     | email | password |
-    | admin2@example.com | password |
+    | admin5@example.com | password |
   
 Scenario: Admin logs in to account
     Given I am on the admin login page
-    When I fill in "Email" with "admin2@example.com"
+    When I fill in "Email" with "admin5@example.com"
     And I fill in "Password" with "password"
     And I press "Login"
     Then I should be on the admin page

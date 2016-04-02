@@ -7,7 +7,7 @@ end
 Given /^I am logged in and on the admin page$/ do
     steps %{
      Given I am on the admin login page
-     When I fill in "Email" with "admin2@example.com"
+     When I fill in "Email" with "admin5@example.com"
      And I fill in "Password" with "password"
      And I press "Login"
      Then I should be on the admin page
