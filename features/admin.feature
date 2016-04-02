@@ -48,9 +48,9 @@ Scenario: Admin adds answer to existing question
     And I press "Update Question"
     Then I should see "Answer blah blah"
     
-@javascript
-Scenario: Admin deletes question:
-  Given I am logged in and on the admin page 
-  And I follow "Questions"
-  And I delete the first question
-  Then I should not see "Does it have a numbered band?"
+# @javascript
+# Scenario: Admin deletes question:
+#   Given I am logged in and on the admin page 
+#   And I follow "Questions"
+#   And I delete the first question
+#   Then I should not see "Does it have a numbered band?"
