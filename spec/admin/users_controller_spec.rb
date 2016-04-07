@@ -29,6 +29,7 @@ describe Admin::UsersController, type: :controller do
     it "approves users" do
       a_user = User.create({email: "test@berkeley.edu", name: "tom lin", phone: "5105415041", address: "2715 Dwight Way, Berkeley CA", password: "password"}) 
       put :approve, :id => "1"
+      expect ActionMailer::Base.deliveries.count == 1
       expect(response).to redirect_to(:action => :index, :scope => "not_approved")
     end
   end

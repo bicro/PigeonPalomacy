@@ -28,4 +28,10 @@ describe User do
             @user.inactive_message.should be (:inactive)
         end
     end
+    
+    describe "#send_account_approved_email" do
+        it 'sends account approved email' do
+            expect {@user.send_account_approved_email}.to change {ActionMailer::Base.deliveries.count}.by(1)
+        end
+    end
 end

@@ -8,5 +8,5 @@ script:
   - bundle exec cucumber
 
 addons:
-  code_climate:
-     repo_token: a2dceb04e205507656996dc4a4fba5e2dff332d21e58217946359396b2684d65
+    code_climate:
+        repo_token: e6508696dbe295cb90caa9caa75d30abbe69052fc414b3e92c056c2926f09693

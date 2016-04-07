@@ -11,4 +11,9 @@ class User < ActiveRecord::Base
       super
     end
   end
+  
+  def send_account_approved_email
+    AccountApprovedMailer.account_approved_email(self).deliver
+  end
+  
 end
