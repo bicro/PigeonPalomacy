@@ -1,6 +1,9 @@
 <nav class="nav clearfix">
   <a class="nav-logo logo" href="/"></a>
-  <button class="button nav-fb transition--subtle">Go to Facebook Page</button>	
+  <div class="nav-buttons">
+    <%= link_to 'Admin', new_admin_user_session_path, :class => 'button' %>
+    <%= link_to 'Expert', new_user_session_path, :class => 'button' %>
+  </div>
 </nav>
 <section class="survey">
   <h3 class="survey-header">Does your pigeon need help? Know now!</h3>
