@@ -47,3 +47,41 @@ Scenario: Admin adds answer to existing question
     And I fill in the last "Content*" with "Answer blah blah"
     And I press "Update Question"
     Then I should see "Answer blah blah"
+
+Scenario: Admin adds image urls as answers to existing question
+    Given I am logged in and on the admin page
+    And I follow "Questions"
+    And I follow “New Question”
+    And I fill in the last "Content*" with "Which of the following photos resembles the pigeon the most?"
+    And I follow "Add Answer"
+    And I fill in the last "Img url" with "img_url_1.png"
+    And I follow "Add Answer"
+    And I fill in the last "Img url" with "img_url_2.png"    
+    And I press "Create Question"
+    Then I should see "Which of the following photos resembles the pigeon the most?"
+    And I should see “img_url_1.png”
+    And I should see “img_url_2.png”
+
+Scenario: Admin adds subquestions to an existing question
+    Given I am logged in and on the admin page
+    And I follow "Questions"
+    And I follow the first question
+    And I follow “Add Nested Questions”
+    And I fill in the last "Content*" with "Which of the following photos resembles the pigeon the most?"
+    And I follow "Add Answer"
+    And I fill in the last "Img url" with "img_url_1.png"
+    And I follow "Add Answer"
+    And I fill in the last "Img url" with "img_url_2.png"    
+    And I press "Update Question"
+    Then I should see "Which of the following photos resembles the pigeon the most?"
+    And I should see “img_url_1.png”
+    And I should see “img_url_2.png”
+
+Scenario: Admin configures the threshold value for hurt pigeons
+    Given I am logged in and on the admin page
+    Given I see “Threshold: 5”
+    And I follow "Questions"
+    And I follow “Reset threshold”
+    And I fill in the last "Value" with 10
+    And I press "Update Threshold"
+    Then I should see "Threshold: 10"
