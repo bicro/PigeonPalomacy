@@ -36,25 +36,25 @@ Scenario: A user with an unhurt pigeon should not get help
 Scenario: Review answers
  Given I am an user
  And I am on the survey page
- When I press “Continue”
+ When I press "Continue"
  Then I should be on the submission page
  And I should see the answers
 
 Scenario: Send the results
  Given I am an user
  And I am on the submission page
- When I press “Send”
- Then I should see “The results have been successfully sent to an expert”
+ When I press "Send"
+ Then I should see "The results have been successfully sent to an expert"
 
 Scenario: Show pigeon rescuer map
  Given I am an user
  And I am on the submission page
- When I press “Send”
- Then I should see an image with uri “www.maps.google.com.”
+ When I press "Send"
+ Then I should see an image with uri ï¿½www.maps.google.com.ï¿½
 
 Scenario: Show preferred expert contact method
  Given I am an user
  And I am on the submission page
- When I press “Send”
- Then I should see “Contact Name:”
- Then I should see “Contact Information:”
+ When I press "Send"
+ Then I should see "Contact Name:"
+ Then I should see "Contact Information:"
