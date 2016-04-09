@@ -14,7 +14,7 @@ Scenario: As a pigeon expert I want to join the pigeon palomacy rescue effort so
  When I press "Submit"
  Then "Robert Lin" should be registered
  Then I should be on the home page
-
+ 
 Scenario: As a pigeon expert I want to log in to change my address so that I can conduct pigeon rescue in a different area
  Given I am on the signin page
  When I enter the following information to sign in:

@@ -59,7 +59,7 @@ Scenario: Admin adds image urls as answers to existing question
     And I fill in the last "Img url" with "img_url_2.png"    
     And I press "Create Question"
     Then I should see "Which of the following photos resembles the pigeon the most?"
-    And I should see "img_url_1.png
+    And I should see "img_url_1.png"
     And I should see "img_url_2.png"
 
 Scenario: Admin adds subquestions to an existing question
