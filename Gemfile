@@ -42,6 +42,10 @@ gem 'foundation-rails', '5.4.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'figaro' #for aws keys management
+gem 'carrierwave'
+gem 'carrierwave-aws'
+
 
 gem "codeclimate-test-reporter", group: :test, require: nil
 
