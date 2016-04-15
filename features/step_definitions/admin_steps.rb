@@ -14,6 +14,12 @@ Given /^I am logged in and on the admin page$/ do
     }
 end
 
+And /^I customize$/ do
+    
+    
+    debugger
+end
+
 Given /^I delete the first question$/ do 
   first(:link, "Delete").click
   alert = page.driver.browser.switch_to.alert
