@@ -1,4 +1,4 @@
-Feature: Admin should be able to login, see and edit questions (Sad Paths)
+Feature: Admin should be able to upload images as answers to questions (Sad Paths)
   
 Background: 
   Given the following questions exist:
@@ -24,13 +24,12 @@ Background:
     | email | password |
     | admin5@example.com | password |
 
-Scenario: Admin cannot leave content of a question blank
+Scenario: Admin adds non image as answer to existing question
     Given I am logged in and on the admin page
     And I follow "Questions"
-    And I follow "New Question"
-    And I press "Create Question"
-    Then I should see "can't be blank"
-
-Scenario: Non-admin cannot bypass admin login to create new questions
-    When I attempt to be on the admin new question page
-    Then I should be on the admin login page
+    And I follow the first question
+    And I follow "Edit Question"
+    And I upload the last "Answer image" with "pigeon.pdf"
+    And I press "Update Question"
+    Then I should see "You are not allowed to upload"
+    And I should see "allowed types: jpg, jpeg, gif, png"

@@ -1,4 +1,4 @@
-Feature: Should I help the pigeon survey Sad paths
+Feature: Admin should be able to upload images as answers to questions
   
 Background: 
   Given the following questions exist:
@@ -20,17 +20,16 @@ Background:
    | No | 0 | 4 | 8 |
    | Yes | 1 | 5 | 9 |
    | No | 0 | 5 | 10 |
- 
-# ice-boxed for iter-4
- 
-# Scenario: Filling out no answers should fail
-#  Given I am on the survey page
-#  And I press "Find Expert"
-#  Then I should see "You did not complete the survey."
+  And the following admins exist:
+    | email | password |
+    | admin5@example.com | password |
 
-# Scenario: Filling out partial information should fail
-#  Given I am on the survey page
-#  When I mark the first answer
-#  And I press "Find Expert"
-#  Then I should see "You did not complete the survey."
-
+Scenario: Admin adds image as answers to existing question
+    Given I am logged in and on the admin page
+    And I follow "Questions"
+    And I follow the first question
+    And I follow "Edit Question"
+    And I upload the last "Answer image" with "pigeon.png"
+    And I press "Update Question"
+    Then I should see "Does it have a numbered band?"
+    And I should see "pigeon.png"
