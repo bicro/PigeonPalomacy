@@ -12,7 +12,7 @@ ActiveAdmin.register Question do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-permit_params :content, :subcontent, answers_attributes: [:id, :question_id, :img_url, :expert_score, :content]
+permit_params :content, :subcontent, answers_attributes: [:id, :question_id, :answer_image, :expert_score, :content]
 
 index do
     column :content
@@ -34,7 +34,7 @@ show do
     end
 end
 
-form do |f|
+form(:html => { :multipart => true }) do |f|
     f.semantic_errors
     f.inputs 'Question Details' do
         f.input :content
@@ -44,7 +44,7 @@ form do |f|
         f.has_many :answers, new_record: 'Add Answer' do |b|
             b.input :content
             b.input :expert_score
-            b.input :img_url
+            b.input :answer_image, as: :file
         end
     end
     f.actions

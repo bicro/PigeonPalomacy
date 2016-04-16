@@ -34,3 +34,13 @@ Scenario: Admin cannot leave content of a question blank
 Scenario: Non-admin cannot bypass admin login to create new questions
     When I attempt to be on the admin new question page
     Then I should be on the admin login page
+
+Scenario: Admin adds non image url as answer to existing question
+    Given I am logged in and on the admin page
+    And I follow "Questions"
+    And I follow the first question
+    And I follow "Edit Question"
+    And I upload the last "Answer image" with "pigeon.pdf"
+    And I press "Update Question"
+    Then I should see "You are not allowed to upload"
+    And I should see "allowed types: jpg, jpeg, gif, png"
