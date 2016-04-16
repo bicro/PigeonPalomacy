@@ -22,6 +22,7 @@ module NavigationHelpers
     when /^the survey page$/ then "/"
     when /^the edit page$/ then "/users/edit"
     when /^the admin new question page$/ then "/admin/questions/new"
+    when /^the settings page$/ then "/admin/settings"
 
     else
       begin

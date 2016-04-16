@@ -54,7 +54,8 @@ Scenario: Admin adds image urls as answers to existing question
     And I follow "New Question"
     And I fill in the last "Content*" with "Which of the following photos resembles the pigeon the most?"
     And I follow "Add Answer"
-    And I fill in the last "Img url" with "img_url_1.png"
+    And I customize
+    # And I fill in the last "Img url" with "img_url_1.png"
     And I follow "Add Answer"
     And I fill in the last "Img url" with "img_url_2.png"    
     And I press "Create Question"

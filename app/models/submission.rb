@@ -7,7 +7,7 @@ class Submission < ActiveRecord::Base
     
     # Pigeon needs help if the sum of answer.expert_score 
     # is greater or equal to this constant. 
-    EXPERT_SCORE_THRESHOLD = 1
+    EXPERT_SCORE_THRESHOLD = Setting["Hurt Threshold"]
     
     def need_expert?
         return answers.sum(:expert_score) >= EXPERT_SCORE_THRESHOLD
