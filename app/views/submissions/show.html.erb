@@ -3,8 +3,31 @@
 <%= link_to 'Edit', edit_submission_path(@submission) %> |
 <%= link_to 'Back', submissions_path %>
 
-<% if @submission.need_expert? %>
-  Your pigeon needs help.
-<% else %>
-  Your pigeon is fine.
-<% end %>
+<div id="submission-result-container">
+
+	<% if @submission.need_expert? %>
+
+	<h1 id="conclusion-header">Your pigeon needs help.</h1>
+
+	<p id="summary-">
+	Tell your expert about your pigeon.
+	</p>	
+
+	<% @submission.answers.each do |answer| %>
+	<li class="question-repeat"><%= answer.question.content %>
+
+		<li class="answer-repeat"><%= answer.content %> </li>
+	</li>
+
+	<% end %>
+
+	<% else %>
+
+	<h1 id="conclusion-header">Your pigeon is fine.</h1>
+
+	<% end %>
+</div>
+
+<div id="map-container">
+	<iframe src="https://www.google.com/maps/d/embed?mid=z-V-YLf26PLU.kQXZ-_QF63Xs&hl=en" width="640" height="480"></iframe>
+</div>
