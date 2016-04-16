@@ -47,13 +47,3 @@ Scenario: Admin adds answer to existing question
     And I fill in the last "Content*" with "Answer blah blah"
     And I press "Update Question"
     Then I should see "Answer blah blah"
-
-Scenario: Admin adds image urls as answers to existing question
-    Given I am logged in and on the admin page
-    And I follow "Questions"
-    And I follow the first question
-    And I follow "Edit Question"
-    And I upload the last "Answer image" with "pigeon.png"
-    And I press "Update Question"
-    Then I should see "Does it have a numbered band?"
-    And I should see "pigeon.png"
