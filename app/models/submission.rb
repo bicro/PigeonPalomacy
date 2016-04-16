@@ -3,7 +3,7 @@ class Submission < ActiveRecord::Base
     has_many :answers, through: :submission_answers
     
     geocoded_by :ip
-    after_validation :geocode
+    after_validation :safe_geocode
     
     # Pigeon needs help if the sum of answer.expert_score 
     # is greater or equal to this constant. 
@@ -24,5 +24,13 @@ class Submission < ActiveRecord::Base
     
     def add_answer aid
         SubmissionAnswer.create(submission_id: id, answer_id: aid) 
+    end
+    
+    def safe_geocode
+        begin
+            geocode
+        rescue
+            Rails.logger.error "Geocoding doesn't work! Website must be down."
+        end
     end
 end
