@@ -39,3 +39,7 @@ end
 Given /^I fill in the last "(.*?)" with "(.*?)"$/ do  |field, fill|
   all(:field, field).last.set(fill)
 end
+
+Given /^I upload the last "(.*?)" with "(.*?)"$/ do |field, file|
+    attach_file(all(:field, field).last["id"], File.join(Rails.root, 'features', 'image_uploads', file))
+end
