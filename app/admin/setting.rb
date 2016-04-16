@@ -18,6 +18,10 @@ actions :index, :update, :edit
 permit_params :var, :value, :thing_id, :thing_type
 
 member_action :update, method: :put do
+    if not is_number? params[:setting][:value]
+        redirect_to edit_admin_setting_path(resource.id), :notice => "Hurt Threshold should be numeric"
+        return
+    end
     Setting[params[:setting][:var]] = Float(params[:setting][:value])
     redirect_to admin_settings_path, :notice => "#{params[:value]} added"
 end
@@ -38,4 +42,8 @@ form do |f|
 end
 
 
+end
+
+def is_number? string
+  true if Float(string) rescue false
 end

@@ -14,12 +14,6 @@ Given /^I am logged in and on the admin page$/ do
     }
 end
 
-And /^I customize$/ do
-    
-    
-    debugger
-end
-
 Given /^I delete the first question$/ do 
   first(:link, "Delete").click
   alert = page.driver.browser.switch_to.alert
@@ -28,6 +22,18 @@ end
 
 Given /^I follow the first question$/ do 
   first(:link, "View").click
+end
+
+Given /^I follow the hurt threshold$/ do 
+  first(:link, "Edit").click
+end
+
+When /^I set hurt threshold to be a (.*?) of "(.*?)"$/ do |type, fill|
+    if type == "float"
+        fill_in("Value", :with => Float(fill))
+    else
+        fill_in("Value", :with => fill)
+    end
 end
 
 Given /^I fill in the last "(.*?)" with "(.*?)"$/ do  |field, fill|
