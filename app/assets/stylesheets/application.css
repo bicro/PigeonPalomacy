@@ -13,24 +13,25 @@
  *= require_self
  *= require registration
  *= require survey
- *= require foundation_and_overrides
+ *= require summary
+
  */
 
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans:400,700');
 
 
 html {
-	height: 100%;
+  height: 100%;
 }
 
 body {
   position: relative;
   height: 100%;
-  font-family: lato, helvetica neue, helvetica, arial, sans-serif;
+  font-family: 'droid sans', helvetica neue, helvetica, arial, sans-serif;
   font-style: normal;
   line-height: 1.5;
   font-size: 14px;
-  color: rgba(41, 41, 41, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -86,38 +87,38 @@ input {
 }
 
 .transition--subtle {
-	-webkit-transition:linear .2s;
-	-moz-transition:linear .2s;
-	-o-transition:linear .2s;
-	transition:linear .2s;
+  -webkit-transition:linear .2s;
+  -moz-transition:linear .2s;
+  -o-transition:linear .2s;
+  transition:linear .2s;
 }
 
 .transition--elastic {
-	-webkit-transition:cubic-bezier(.68,-.55,.265,1.55) 1s;
-	-moz-transition:cubic-bezier(.68,-.55,.265,1.55) 1s;
-	-o-transition:cubic-bezier(.68,-.55,.265,1.55) 1s;
-	transition:cubic-bezier(.68,-.55,.265,1.55) 1s;
+  -webkit-transition:cubic-bezier(.68,-.55,.265,1.55) 1s;
+  -moz-transition:cubic-bezier(.68,-.55,.265,1.55) 1s;
+  -o-transition:cubic-bezier(.68,-.55,.265,1.55) 1s;
+  transition:cubic-bezier(.68,-.55,.265,1.55) 1s;
 }
 
 .transition--friction {
-	-webkit-transition:cubic-bezier(.77,0,.175,1) .5s;
-	-moz-transition:cubic-bezier(.77,0,.175,1) .5s;
-	-o-transition:cubic-bezier(.77,0,.175,1) .5s;
-	transition:cubic-bezier(.77,0,.175,1) .5s;
+  -webkit-transition:cubic-bezier(.77,0,.175,1) .5s;
+  -moz-transition:cubic-bezier(.77,0,.175,1) .5s;
+  -o-transition:cubic-bezier(.77,0,.175,1) .5s;
+  transition:cubic-bezier(.77,0,.175,1) .5s;
 }
 
 .transition--whoosh {
-	-webkit-transition:cubic-bezier(.19,1,.22,1) 1s;
-	-moz-transition:cubic-bezier(.19,1,.22,1) 1s;
-	-o-transition:cubic-bezier(.19,1,.22,1) 1s;
-	transition:cubic-bezier(.19,1,.22,1) 1s;
+  -webkit-transition:cubic-bezier(.19,1,.22,1) 1s;
+  -moz-transition:cubic-bezier(.19,1,.22,1) 1s;
+  -o-transition:cubic-bezier(.19,1,.22,1) 1s;
+  transition:cubic-bezier(.19,1,.22,1) 1s;
 }
 
 .transition--smooth {
-	-webkit-transition:cubic-bezier(0.25, 0.46, 0.45, 0.94) .8s;
-	-moz-transition:cubic-bezier(0.25, 0.46, 0.45, 0.94) .8s;
-	-o-transition:cubic-bezier(0.25, 0.46, 0.45, 0.94) .8s;
-	transition:cubic-bezier(0.25, 0.46, 0.45, 0.94) .8s;
+  -webkit-transition:cubic-bezier(0.25, 0.46, 0.45, 0.94) .8s;
+  -moz-transition:cubic-bezier(0.25, 0.46, 0.45, 0.94) .8s;
+  -o-transition:cubic-bezier(0.25, 0.46, 0.45, 0.94) .8s;
+  transition:cubic-bezier(0.25, 0.46, 0.45, 0.94) .8s;
 }
 
 .button {
@@ -135,20 +136,21 @@ input {
   font-size: 14px;
   font-weight: 600;
   font-style: normal;
-  background-color: #BFAAFF;
-  padding: 8px 20px 10px 20px;
+  background-color: #52bdec;
+  padding: 8px 16px;
   line-height: 1.5;
-  font-family: lato;
+  font-family: 'droid sans';
+  margin-right: 8px;
 }
 
-.button:hover {
+/*.button:hover {
   background: #AF95FF;
-}
+}*/
 
 
 .logo {
-  width: 105px;
-  height: 20px;
+  width: 125px;
+  height: 57px;
   background-size: 100%;
   cursor: pointer;
   background-image: url('logo.png');
@@ -167,7 +169,7 @@ h2 {
   font-size: 36px;
   font-weight: 500;
   margin-bottom: 20px;
-  color: rgba(41, 41, 41, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   margin-top: 0;
 }
 
@@ -175,7 +177,7 @@ h3 {
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 20px;
-  color: rgba(41, 41, 41, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   margin-top: 0;
 }
 
@@ -183,7 +185,7 @@ h4 {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 10px;
-  color: rgba(41, 41, 41, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   margin-top: 0;
 }
 
@@ -191,7 +193,7 @@ p {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 0;
-  color: rgba(41, 41, 41, 0.6);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 hr {
@@ -201,7 +203,7 @@ hr {
   width: 100px;
   margin: 30px auto;
   border: 0;
-  border-top: 1px solid rgba(41, 41, 41, 0.10);
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
 }
 
 strong {
@@ -228,7 +230,7 @@ li {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 0;
-  color: rgba(41, 41, 41, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   list-style: none;
 }
 
@@ -239,4 +241,82 @@ blockquote {
 
 .margin-left {
    margin-left: 5px !important; 
+}
+
+.notice {
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.alert {
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.nav {
+  background-color: #FFFFFF;
+  height: 100px;
+  box-shadow: 0 0 1px rgba(41, 41, 41, 0.2);
+  padding: 10px 20px;
+  width: 100%;
+  z-index: 10;
+  position: absolute;
+}
+
+.nav-link {
+  float: right;
+  margin: 0;
+  top: calc(50% - 18px);
+  position: absolute;
+  right: 20px;
+}
+
+.nav-link-item {
+  float: left;
+  text-transform: uppercase;
+  color: #52bdec;
+  font-size: 14px;
+  margin-right: 5px;
+  font-weight: 700;
+  padding: 5px 15px;
+  /*  border: 2px solid #52bdec;*/
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav-link-home, .nav-link-about {
+  border-color: transparent;
+}
+
+.nav-link-facebook {
+  /*    margin-right: 10px;*/
+  /* border-color: #3b5998; */
+  /* color: #3b5998; */
+}
+
+.nav-link-item-dropdown {
+  display: none;
+  position: absolute;
+  right: 20px;
+  top: 40px;
+  background-color: #FFFFFF;
+  color: #52bdec;
+  padding: 10px 15px 5px 15px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.nav-link-login-admin, .nav-link-login-expert {
+  position: relative;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.nav-link-login-admin:hover, .nav-link-login-expert:hover {
+  color: rgba(0, 0, 0, 0.4);
+}
+.nav-link-item:hover {
+    color: rgba(0, 0, 0, 0.4);
 }
