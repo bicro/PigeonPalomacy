@@ -2,90 +2,76 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.nav {
-	background-color: #FFFFFF;
-	height: 60px;
-	box-shadow: 0 0 1px rgba(41, 41, 41, 0.2);
-	padding: 12px 20px;
-	width: 100%;
-	position: fixed;
-	z-index: 10;
-}
 
-.nav-fb {
-	float: right;
-}
 
 .survey {
-	width: 540px;
-	left: calc(50% - 270px);
-	position: relative;
-	top: 120px;
-	margin-bottom: 40px;
+  width: 540px;
+  left: calc(50% - 270px);
+  position: relative;
+  top: 160px;
+  margin-bottom: 40px;
 }
 
 .survey-card {
-	/*    height: 97px;*/
-	background-color: #FFFFFF;
-	box-shadow: 0 1px 2px 0 rgba(41, 41, 41, 0.1);
-	border-radius: 3px;
-	padding: 20px 20px 25px 20px;
-	position: relative;
-	margin-bottom: 10px;
+  /*    height: 97px;*/
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  padding: 20px 20px 25px 20px;
+  position: relative;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
-
 .survey-description {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+.survey-submit {
+  margin-top: 10px;
 }
 
-.survey-submit {
-	margin-top: 10px;
+.survey-container {
+	margin-bottom: 20px;
 }
 
 .question {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .answers {
-	margin: 0;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }
 
 .answer {
-	color: #A9A9A9;
-	margin-right: 60px;
+  color: rgba(0, 0, 0, 0.4);
+  margin-right: 60px;
 }
 
 .answer input {
-	margin: 0;
-	width: 16px;
-	height: 16px;
-	border: 2px solid rgba(41, 41, 41, 0.2);
-	border-radius: 50%;
-	cursor: pointer;
-	position: relative;
-	vertical-align: bottom;
-	bottom: 5px;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  vertical-align: bottom;
+  bottom: 5px;
 }
-
 .answer label {
-	margin-left: 5px;
+  margin-left: 5px;
 }
-
 .answer input[type=radio]:checked + label {
-	color: #AF95FF;
+  color: #52bdec;
 }
 
 .answer input:checked {
-	border-color: #AF95FF;
-	background-color: #AF95FF;
+  border-color: #52bdec;
+  background-color: #52bdec;
 }
 
-.nav-buttons {
-	float: right;
-	display: inline-block;
-}
+

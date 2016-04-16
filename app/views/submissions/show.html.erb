@@ -1,33 +1,30 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_submission_path(@submission) %> |
-<%= link_to 'Back', submissions_path %>
-
-<div id="submission-result-container">
-
+<p class="notice" id="notice"><%= notice %></p>
+<section class="survey" id="submission-result-container">
 	<% if @submission.need_expert? %>
-
-	<h1 id="conclusion-header">Your pigeon needs help.</h1>
-
-	<p id="summary-">
+	<h3 id="conclusion-header" class="survey-header">Your pigeon needs help.</h3>
+	<p id="summary-" class="survey-description">
 	Tell your expert about your pigeon.
 	</p>	
+	<div class="summary-container">
+		<% @submission.answers.each do |answer| %>
+			<div class="summary-answer">
+				<h4 class="question-repeat"><%= answer.question.content %>
+					<p class="answer-repeat"><%= answer.content %> </p>
+				</h4>
+			</div>
+		<% end %>				
 
-	<% @submission.answers.each do |answer| %>
-	<li class="question-repeat"><%= answer.question.content %>
-
-		<li class="answer-repeat"><%= answer.content %> </li>
-	</li>
-
-	<% end %>
-
+	</div>
 	<% else %>
-
-	<h1 id="conclusion-header">Your pigeon is fine.</h1>
-
+	<h3 id="conclusion-header" class="survey-header">Your pigeon is fine.</h3>
 	<% end %>
-</div>
-
+	<%= link_to 'Edit Answers', edit_submission_path(@submission), class: "button" %>
+	<%= link_to 'Back', submissions_path, class: "button"%>
+</section>
 <div id="map-container">
 	<iframe src="https://www.google.com/maps/d/embed?mid=z-V-YLf26PLU.kQXZ-_QF63Xs&hl=en" width="640" height="480"></iframe>
 </div>
+
+
+
+

@@ -16,7 +16,19 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-
+    <nav class="nav clearfix">
+      <a class="nav-logo logo" href="http://www.pigeonrescue.org/"></a>
+      <ul class="nav-link">
+        <li class="nav-link-item nav-link-home"><a href="http://www.pigeonrescue.org/">Home</a></li>
+        <li class="nav-link-item nav-link-about">About</li>
+        <li class="nav-link-item nav-link-facebook">Our Facebook Page</li>
+        <li class="nav-link-item nav-link-login">Login</li>
+        <div class="nav-link-item-dropdown">
+          <%= link_to 'As an Admin', new_admin_user_session_path, :class => 'nav-link-login-admin' %>
+          <%= link_to 'As an Expert', new_user_session_path, :class => 'nav-link-login-expert' %>     
+        </div>
+      </ul>
+    </nav>
     <%= yield %>
 
   </body>
