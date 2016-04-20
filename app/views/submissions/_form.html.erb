@@ -3,12 +3,12 @@
   <% @questions.each do |q| %>
   <div class="survey-card">
     <%= render partial: "/questions/question", locals: {question: q} %>
-    <ul class="answers">
+    <ul class="answers clearfix">
       <% q.answers.each do |a| %>
       <li class="answer">
         <%= radio_button_tag q.id, a.id %>
         <%= label_tag a.content %>
-        <%= image_tag a.image_url %>
+        <%= image_tag a.image_url, class: "img--wh answer-img" %>
       </li>
       <% end %>
     </ul>        
