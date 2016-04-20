@@ -14,7 +14,7 @@ Scenario: As a pigeon expert I want to join the pigeon palomacy rescue effort so
  When I press "Submit"
  Then "Robert Lin" should be registered
  Then I should be on the home page
-
+ 
 Scenario: As a pigeon expert I want to log in to change my address so that I can conduct pigeon rescue in a different area
  Given I am on the signin page
  When I enter the following information to sign in:
@@ -27,13 +27,3 @@ Scenario: As a pigeon expert I want to log in to change my address so that I can
  When I fill in "Current password" with "linfeng0000"
  Then I press "Update"
  Then email of "Feng Lin" should be "linfeng@gmail.com"
-
- Scenario: As a pigeon expert, I can include experience description, preferred contact method and upload my shelter images in my application
- Given I am on the signup page
- When I enter the following information to sign up:
- | email                    | name         | phone      | address             | password    | experience |  preferred contact method
- | robert@berkeley.edu      | Robert Lin   | 5105410000 | #12 2715 Dwight Way | robert0000  | Worked in a pigeon shelter | phone
-Then I upload shelter images
- When I press "Submit"
- Then the application for "Robert Lin" should be registered
- Then I should be on the home page

@@ -1,4 +1,4 @@
-Feature: Admin should be able to login, see and edit questions
+Feature: Admin should be able to upload images as answers to questions (Sad Paths)
   
 Background: 
   Given the following questions exist:
@@ -23,27 +23,13 @@ Background:
   And the following admins exist:
     | email | password |
     | admin5@example.com | password |
-  
-Scenario: Admin logs in to account
-    Given I am on the admin login page
-    When I fill in "Email" with "admin5@example.com"
-    And I fill in "Password" with "password"
-    And I press "Login"
-    Then I should be on the admin page
-    
-Scenario: Admin sees questions
-    Given I am logged in and on the admin page
-    And I follow "Questions"
-    Then I should see "Can it fly?"
-    And I should see "Is it injured?"
-    And I should see "Is it a King Pigeon?"
 
-Scenario: Admin adds answer to existing question
+Scenario: Admin adds non image as answer to existing question
     Given I am logged in and on the admin page
     And I follow "Questions"
     And I follow the first question
     And I follow "Edit Question"
-    And I follow "Add Answer"
-    And I fill in the last "Content*" with "Answer blah blah"
+    And I upload the last "Answer image" with "pigeon.pdf"
     And I press "Update Question"
-    Then I should see "Answer blah blah"
+    Then I should see "You are not allowed to upload"
+    And I should see "allowed types: jpg, jpeg, gif, png"

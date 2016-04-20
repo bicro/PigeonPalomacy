@@ -24,7 +24,7 @@ describe Question do
             @question.add_answers([{content: "Hi", img_url: "google.com"}])
             @question.answers.size.should == 1
             @question.answers.first.content.should == "Hi"
-            @question.answers.first.img_url.should == "google.com"
+            @question.answers.first["img_url"].should == "google.com"
         end    
     end
 end
