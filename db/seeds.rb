@@ -16,8 +16,8 @@ Question.create({content: "Can it fly?"}).add_answers([{content: "Yes", expert_s
 Question.create({content: "Is it injured"}).add_answers([{content: "Yes", expert_score: 1},
                                                         {content: "No", expert_score: 0}])
 
-Question.create({content: "Is it a King Pigeon?"}).add_answers([{content: "Yes", expert_score: 1}, 
-                                                                {content: "No", expert_score: 0}])
+Question.create({content: "Is it a King Pigeon?"}).add_answers([{content: "Yes", expert_score: 1, answer_image: File.open("#{Rails.root}/db/seed_images/king_pigeon.jpg")}, 
+                                                                {content: "No", expert_score: 0, answer_image: File.open("#{Rails.root}/db/seed_images/regular_pigeon.jpg")}])
 
 Question.create({content: "Does it have a numbered band."}).add_answers([{content: "Yes", expert_score: 1}, 
                                                                          {content:"No", expert_score: 0}])

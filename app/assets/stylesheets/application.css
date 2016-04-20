@@ -54,6 +54,7 @@ body {
 
 img {
   object-fit: cover;
+  display: block;
 }
 
 .img--wh {
@@ -262,7 +263,16 @@ blockquote {
   padding: 10px 20px;
   width: 100%;
   z-index: 10;
-  position: absolute;
+  position: fixed;
+  opacity: 0;
+  -webkit-transition:cubic-bezier(.19,1,.22,1) 2s;
+  -moz-transition:cubic-bezier(.19,1,.22,1) 2s;
+  -o-transition:cubic-bezier(.19,1,.22,1) 2s;
+  transition:cubic-bezier(.19,1,.22,1) 2s;
+}
+
+.nav-active {
+  opacity: 1;
 }
 
 .nav-link {

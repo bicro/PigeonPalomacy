@@ -14,15 +14,16 @@
 }
 
 #submission-result-container {
-    float: left;
+/*    float: left;
     left: 40px;
-    position: relative;
+    position: relative;*/
 }
 
 #map-container {
-    float: right;
+/*    float: right;*/
     position: relative;
-    right: 40px;
-    height: auto;
+    left: calc(50% - 300px);
+/*    height: auto;*/
     top: 160px;
+    width: 600px;
 }

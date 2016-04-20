@@ -5,11 +5,28 @@
 
 
 .survey {
-  width: 540px;
-  left: calc(50% - 270px);
+  width: 600px;
+  left: calc(50% - 300px);
   position: relative;
   top: 160px;
   margin-bottom: 40px;
+  transform: translateY(40px);
+  -webkit-transform: translateY(40px);
+  -moz-transform: translateY(40px);
+  -o-transform: translateY(40px);
+  opacity: 0;
+  -webkit-transition:cubic-bezier(.19,1,.22,1) 2s;
+  -moz-transition:cubic-bezier(.19,1,.22,1) 2s;
+  -o-transition:cubic-bezier(.19,1,.22,1) 2s;
+  transition:cubic-bezier(.19,1,.22,1) 2s;
+}
+
+.survey-active {
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -o-transform: translateY(0);
+  opacity: 1;
 }
 
 .survey-card {
@@ -17,7 +34,7 @@
   background-color: #FFFFFF;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   border-radius: 3px;
-  padding: 20px 20px 25px 20px;
+  padding: 20px 20px 10px 20px;
   position: relative;
   margin-bottom: 10px;
   border: 1px solid rgba(0, 0, 0, 0.05);
@@ -39,16 +56,18 @@
 
 .answers {
   margin: 0;
-  display: -webkit-box;
+/*  display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  display: flex;
+  display: flex;*/
 }
 
 .answer {
   color: rgba(0, 0, 0, 0.4);
-  margin-right: 60px;
+  margin-right: 50px;
+  float: left;
+  margin-bottom: 10px;
 }
 
 .answer input {
@@ -74,4 +93,11 @@
   background-color: #52bdec;
 }
 
-
+.answer-img {
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+}
+img[src=""] {
+   display: none;
+}
