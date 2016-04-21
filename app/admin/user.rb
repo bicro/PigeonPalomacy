@@ -30,6 +30,7 @@ index do
     column :state
     column :zipcode
     column :country
+    column :inferred_address
     column "Preferred Contact", :preferred_contact
     column "Expertise Description", :expertise_description
     column "Approve User" do |user|

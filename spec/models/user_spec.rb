@@ -44,7 +44,12 @@ describe User do
     it "should populate the correct inferred_address" do
       @user.inferred_address.should eq('2715 Dwight Way,#22,Berkeley,CA,94704,USA')
     end
-    
+
+    it "should raise an exception if no address can be inferred" do
+      Geocoder::Lookup::Test.add_stub("2715 Dwight Way,#22,Berkeley,CA,94704,US", [])
+      expect{User.create!({email: "test2@berkeley.edu", name: "linda lin", phone: "5105415041", password: "password", street_address_1: "2715 Dwight Way", street_address_2: "#22", city: "Berkeley", state: "CA", zipcode: "94704", preferred_contact: "phone", expertise_description: "I helped pigeons before", country: "US"}) }.to raise_error(ActiveRecord::RecordInvalid)
+    end
+
     describe "#active_for_authentication?" do
         it "should be inactive for authentication by default" do
             @user.active_for_authentication?.should be false

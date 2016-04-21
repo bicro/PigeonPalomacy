@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
         self.inferred_address = loc.formatted_address
       else
         errors.add(:base,'Invalid address')
-        raise "Invalid address"
+        raise ActiveRecord::RecordInvalid.new(self)
       end
     end
     
