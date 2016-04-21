@@ -39,12 +39,6 @@
                 <%= f.text_field :phone, placeholder: "e.g. 510-333-2416", class: "registration-field-box-red" %>
               </div>
             </div>
-            <div class="large-6 columns">
-              <div class="field">
-                <%= f.label :address, class: "field_label required" %><br />
-                <%= f.text_field :address, autofocus: false, placeholder: "e.g. 2310 Dwight Way, Berkeley, CA 94704", class: "registration-field-box-regular" %>
-              </div>
-            </div>
           </div>
           <div class="row">
             <div class="large-6 columns">
@@ -64,6 +58,44 @@
                 <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", autocomplete: "off", class: "registration-field-box-yellow" %>
               </div>
             </div>
+          </div>
+          <div class="field">
+            <%= f.label :street_address_1, "Address Line 1", class: "field_label required"  %><br />
+            <%= f.text_field :street_address_1, placeholder: "2310 Dwight Way", class: "registration-field-box-yellow" %>
+            <div class="reminder-text">
+              Stree address, P.O. box, company name, c/o
+            </div>
+          </div>
+          <div class="field">
+            <%= f.label :street_address_2, "Address Line 2", class: "field_label"  %><br />
+            <%= f.text_field :street_address_2, placeholder: "Unit 22", class: "registration-field-box-yellow" %>
+            <div class="reminder-text">
+              Apartment, suite, unit, building, floor, etc.
+            </div>
+          </div>
+          <div class="field">
+            <%= f.label :city, class: "field_label required"  %><br />
+            <%= f.text_field :city, placeholder: "Berkeley", class: "registration-field-box-yellow" %>
+          </div>
+          <div class="field">
+            <%= f.label :state, class: "field_label required"  %><br />
+            <%= f.text_field :state, placeholder: "CA", class: "registration-field-box-yellow" %>
+          </div>
+          <div class="field">
+            <%= f.label :zipcode, class: "field_label required"  %><br />
+            <%= f.text_field :zipcode, placeholder: "94704", class: "registration-field-box-yellow" %>
+          </div>
+          <div class="field">
+            <%= f.label :country, class: "field_label required"  %><br />
+            <%= f.text_field :country, placeholder: "USA", class: "registration-field-box-yellow" %>
+          </div>
+          <div class="field">
+            <%= f.label :preferred_contact, class: "field_label required"  %><br />
+            <%= f.text_field :preferred_contact, placeholder: "Call", class: "registration-field-box-yellow" %>
+          </div>
+          <div class="field">
+            <%= f.label :expertise_description, "Briefly Describe Your Expertise", class: "field_label required"  %><br />
+            <%= f.text_field :expertise_description, class: "registration-field-box-yellow" %>
           </div>
           <div class="actions">
             <%= f.submit "Submit", class: "button registration-button" %>

@@ -26,6 +26,8 @@ gem 'rspec'
 gem 'geocoder'
 gem 'rack-throttle'
 
+gem 'geokit-rails'
+
 gem 'devise'
 
 gem 'activeadmin', github: 'activeadmin'
