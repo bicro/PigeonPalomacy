@@ -35,6 +35,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'rails-settings-cached', "~> 0.5.6"
 
 gem 'foundation-rails', '5.4.5'
+gem 'geoip'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
