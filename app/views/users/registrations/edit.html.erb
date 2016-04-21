@@ -19,9 +19,45 @@
   </div>
   
   <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address, autofocus: true, placeholder: "e.g. 2310 Dwight Way, Berkeley, CA 94704" %>
+    <%= f.label "address line 1"%><br />
+    <%= f.text_field :street_address_1, autofocus: true, placeholder: "2310 Dwight Way" %>
+    <div class="reminder-text">
+      Stree address, P.O. box, company name, c/o
+    </div>
   </div>
+  
+  <div class="field">
+    <%= f.label "address line 2"%><br />
+    <%= f.text_field :street_address_2, autofocus: true, placeholder: "Unit 22"%>
+    <div class="reminder-text">
+      Apartment, suite, unit, building, floor, etc.
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :city%><br />
+    <%= f.text_field :city, placeholder: "Berkeley"%>
+  </div>
+  <div class="field">
+    <%= f.label :state%><br />
+    <%= f.text_field :state, placeholder: "CA"%>
+  </div>
+  <div class="field">
+    <%= f.label :zipcode%><br />
+    <%= f.text_field :zipcode, placeholder: "94704"%>
+  </div>
+  <div class="field">
+    <%= f.label :country%><br />
+    <%= f.text_field :country, placeholder: "USA"%>
+  </div>
+  <div class="field">
+    <%= f.label :preferred_contact%><br />
+    <%= f.text_field :preferred_contact, placeholder: "Call"%>
+  </div>
+  <div class="field">
+    <%= f.label "briefly describe your expertise"%><br />
+    <%= f.text_field :expertise_description%>
+  </div>
+
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
