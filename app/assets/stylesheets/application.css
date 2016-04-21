@@ -17,7 +17,7 @@
 
  */
 
-@import url('https://fonts.googleapis.com/css?family=Droid+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans:400,500,600,700');
 
 
 html {
@@ -257,6 +257,7 @@ blockquote {
     color: #FFFFFF;
     padding: 5px 20px;
     display: none;
+    z-index: 11;
 }
 
 .alert {
@@ -270,6 +271,7 @@ blockquote {
     color: #FFFFFF;
     padding: 5px 20px;
     display: none;
+    z-index: 11;
 }
 
 .nav {
