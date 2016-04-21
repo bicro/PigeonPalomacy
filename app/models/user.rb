@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   
     def infer_address_and_coordinates
       results = Geocoder.search(build_clean_address(self))
-      if results.size == 1
+      if results.size != 0
         loc = results.first
         self.latitude = loc.latitude
         self.longitude = loc.longitude
