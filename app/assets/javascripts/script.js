@@ -1,5 +1,8 @@
 $(document).ready(function() {
+	console.log('js')
 	$('.survey').addClass('survey-active');
+	console.log('nav');
+
 	$('.nav').addClass('nav-active');
 	$('.nav-link-login').click(function() {
 		console.log('clicked');
@@ -13,3 +16,6 @@ $(document).ready(function() {
 	});
 });
 
+$(document).change(function() {
+	$('.nav').addClass('nav-active');
+});	

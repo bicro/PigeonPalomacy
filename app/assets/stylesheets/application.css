@@ -25,7 +25,7 @@ html {
 }
 
 body {
-  position: relative;
+  position: absolute;
   height: 100%;
   font-family: 'droid sans', helvetica neue, helvetica, arial, sans-serif;
   font-style: normal;
@@ -39,6 +39,8 @@ body {
   overflow-x: hidden;
   background-color: #FAFAFA;
   margin: 0;
+  top: 0;
+  width: 100%;
 }
 
 *, *:after, *:before {
@@ -245,15 +247,29 @@ blockquote {
 }
 
 .notice {
-    position: absolute;
+    position: fixed;
     width: 100%;
     top: 0;
+    z-index: 20;
+    height: 40px;
+    margin: 0;
+    background-color: #52bdec;
+    color: #FFFFFF;
+    padding: 5px 20px;
+    display: none;
 }
 
 .alert {
-    position: absolute;
+    position: fixed;
     width: 100%;
     top: 0;
+    z-index: 20;
+    height: 40px;
+    margin: 0;
+    background-color: #F15C22;
+    color: #FFFFFF;
+    padding: 5px 20px;
+    display: none;
 }
 
 .nav {
@@ -264,7 +280,7 @@ blockquote {
   width: 100%;
   z-index: 10;
   position: fixed;
-  opacity: 0;
+  opacity: 1;
   -webkit-transition:cubic-bezier(.19,1,.22,1) 2s;
   -moz-transition:cubic-bezier(.19,1,.22,1) 2s;
   -o-transition:cubic-bezier(.19,1,.22,1) 2s;
