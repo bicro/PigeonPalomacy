@@ -24,7 +24,15 @@ index do
     column :approved
     column :phone
     column :email
-    column :address
+    column :street_address_1
+    column :street_address_2
+    column :city
+    column :state
+    column :zipcode
+    column :country
+    column :inferred_address
+    column "Preferred Contact", :preferred_contact
+    column "Expertise Description", :expertise_description
     column "Approve User" do |user|
         if user.approved?
             span "Already Approved"
