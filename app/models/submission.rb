@@ -19,7 +19,7 @@ class Submission < ActiveRecord::Base
 
         raise "This object is not geocoded" unless self.geocoded?
 
-        NUMBER_EXPERTS = 5
+        number_experts = 5
 
         experts = []
 
@@ -31,10 +31,9 @@ class Submission < ActiveRecord::Base
 
             index_and_distance = largest_distance(experts)
 
-            if experts.size < NUMBER_EXPERTS
+            if experts.size < number_experts
                 experts << pigeon_expert
-            elsif experts.size == NUMBER_EXPERTS 
-                    && distance < index_and_distance[1])
+            elsif experts.size == number_experts && distance < index_and_distance[1]
                 experts.delete_at(index_and_distance[0])
                 experts << pigeon_expert
             end

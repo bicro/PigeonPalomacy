@@ -20,4 +20,19 @@ describe Submission do
         @submission.add_answer answer2.id
         @submission.answers.include? Answer.find(answer2.id)
     end
-end
+
+    it 'should find the closest experts when less than 5 exist' do 
+        exp1 = User.create()
+        exp2 = User.create()
+    end
+
+    it 'should find the closest experts when more than 5 exist' do
+        exp1 = User.create()
+        exp2 = User.create()
+        exp3 = User.create()
+        exp4 = User.create()
+        exp5 = User.create()
+        exp6 = User.create()
+    end
+
+ end
