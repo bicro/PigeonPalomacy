@@ -17,17 +17,20 @@ class Submission < ActiveRecord::Base
     # submission.
     def experts
 
-        raise "This object is not geocoded" unless self.geocoded?
+        #raise "This object is not geocoded" unless self.geocoded?
 
         number_experts = 5
 
         experts = []
 
+        puts "my lat and long"
+        puts self.latitude
+        puts self.longitude
+        puts '____________'
+
         User.all.each do |pigeon_expert| 
-            distance = distance(self.longitude, 
-                                self.latitude, 
-                                pigeon_expert.longitude, 
-                                pigeon_expert.latitude)    
+            distance = distance_to([Float(pigeon_expert.longitude), 
+                                    Float(pigeon_expert.latitude)])    
 
             index_and_distance = largest_distance(experts)
 
@@ -41,6 +44,33 @@ class Submission < ActiveRecord::Base
 
         return experts
     end
+
+    # Returns [index, distance], where index is the position
+    # of the expert in EXPERTS and distance is the distance 
+    # to that expert.
+    def largest_distance(experts)
+        largest_dist = -1
+        largest_index = -1
+
+        index = 0
+        experts.each do |expert|
+            exp_dst = self.distance_to([expert.longitude, 
+                                        expert.latitude])  
+
+            puts expert.email
+            puts exp_dst
+
+            if exp_dst > largest_dist
+                largest_index = index
+                largest_dist = exp_dst
+            end
+
+            index += 1
+        end
+
+        return [largest_index, largest_dist]
+    end
+
 
     def info_text 
         # TODO fix me!
@@ -57,27 +87,4 @@ class Submission < ActiveRecord::Base
             Rails.logger.error "Geocoding doesn't work! Website must be down."
         end
     end
-end
-
-# Returns [index, distance], where index is the position
-# of the expert in EXPERTS and distance is the distance 
-# to that expert.
-def largest_distance(experts)
-    largest_dist = -1
-    largest_index = -1
-
-    index = 0
-    experts.each do |expert|
-        exp_dst = self.distance(expert.longitude, 
-                                expert.latitude)  
-
-        if exp_dst > largest_dst
-            largest_index = index
-            largest_dst = exp_dst
-        end
-
-        index += 1
-    end
-
-    return [largest_index, largest_dst]
 end
