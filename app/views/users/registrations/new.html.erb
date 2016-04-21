@@ -21,13 +21,13 @@
           <div class="registration-basic row clearfix">
             <div class="registration-basic-field large-6 columns">
               <div class="field">
-                <%= f.label :name, class: "field_label required" %>
+                <%= f.label :name, "Name*", class: "field_label required" %>
                 <%= f.text_field :name, placeholder: "Victoria Bian", class: "registration-field-box-blue" %>
               </div>
             </div>
             <div class="registration-basic-field large-6 columns">
               <div class="field">
-                <%= f.label :email, class: "field_label required"%>
+                <%= f.label :email, "Email*", class: "field_label required"%>
                 <%= f.email_field :email, placeholder: "victoriabian@gmail.com", class: "registration-field-box-regular" %>
               </div>
             </div>
@@ -41,7 +41,7 @@
           <div class="registration-password row clearfix">
             <div class="registration-password-field large-6 columns">
               <div class="field">
-                <%= f.label :password, class: "field_label required"  %>
+                <%= f.label :password, "Password*", class: "field_label required"  %>
                 <%= f.password_field :password, placeholder: "Password", autocomplete: "off", class: "registration-field-box-green"  %>
                 <div class="reminder-text">
                   <% if @minimum_password_length %>
@@ -52,7 +52,7 @@
             </div>
             <div class="registration-password-field large-6 columns">
               <div class="field">
-                <%= f.label :password_confirmation, class: "field_label required"  %>
+                <%= f.label :password_confirmation, "Password Confirmation*", class: "field_label required"  %>
                 <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", autocomplete: "off", class: "registration-field-box-yellow" %>
               </div>
             </div>
@@ -60,7 +60,7 @@
           <div class="registration-address row clearfix">
             <div class="registration-address-field large-6 columns">
               <div class="field">
-                <%= f.label :street_address_1, "Address Line 1", class: "field_label required"  %>
+                <%= f.label :street_address_1, "Address Line 1*", class: "field_label required"  %>
                 <%= f.text_field :street_address_1, placeholder: "2310 Dwight Way", class: "registration-field-box-yellow" %>
                 <div class="reminder-text">
                   Stree address, P.O. box, company name, c/o
@@ -79,13 +79,13 @@
             <div class="registration-location row clearfix">
               <div class="registration-location-field large-6 columns">
                 <div class="field">
-                  <%= f.label :city, class: "field_label required"  %>
+                  <%= f.label :city, "City*", class: "field_label required"  %>
                   <%= f.text_field :city, placeholder: "Berkeley", class: "registration-field-box-yellow" %>
                 </div>           
               </div>
               <div class="registration-location-field large-6 columns">
                 <div class="field">
-                  <%= f.label :state, class: "field_label required"  %>
+                  <%= f.label :state, "State*", class: "field_label required"  %>
                   <%= f.text_field :state, placeholder: "CA", class: "registration-field-box-yellow" %>
                 </div>         
               </div>
@@ -93,13 +93,13 @@
             <div class="registration-location row clearfix">
               <div class="registration-location-field large-6 columns">
                 <div class="field">
-                  <%= f.label :zipcode, class: "field_label required"  %>
+                  <%= f.label :zipcode, "Zipcode*", class: "field_label required"  %>
                   <%= f.text_field :zipcode, placeholder: "94704", class: "registration-field-box-yellow" %>
                 </div>         
               </div>
               <div class="registration-location-field large-6 columns">
                 <div class="field">
-                  <%= f.label :country, class: "field_label required"  %>
+                  <%= f.label :country, "Country*", class: "field_label required"  %>
                   <%= f.text_field :country, placeholder: "USA", class: "registration-field-box-yellow" %>
                 </div>        
               </div>              
@@ -108,18 +108,18 @@
           <div class="registration-more row clearfix">
             <div class="registration-more-field">
               <div class="field">
-                <%= f.label :preferred_contact, "Preferred Contact and Hours", class: "field_label required"  %>
+                <%= f.label :preferred_contact, "Preferred Contact and Hours*", class: "field_label required"  %>
                 <%= f.text_field :preferred_contact, placeholder: "e.g. Prefer Monday through Friday mornings by email.", class: "registration-field-box-yellow" %>
               </div>
             </div>
             <div class="registration-more-field">
               <div class="field">
-                <%= f.label :expertise_description, "Briefly Describe Your Expertise", class: "field_label required"  %>
+                <%= f.label :expertise_description, "Briefly Describe Your Expertise*", class: "field_label required"  %>
                 <%= f.text_field :expertise_description, placeholder: "e.g. I have 5 years of experience in...", class: "registration-more-expertise" %>
               </div>                
             </div>          
           </div>
-          <div class="registration-action clearfix">
+          <div class="registration-action clearfix actions">
             <%= f.submit "Submit", class: "button registration-button" %>
             <div class="registration-link">Already have an account?<strong><%= render "users/shared/links" %></strong></div>
           </div>

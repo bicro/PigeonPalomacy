@@ -90,7 +90,9 @@
 
 .answer input:checked {
   border-color: #52bdec;
-  background-color: #52bdec;
+  background-image: url('circle.png');
+  background-size: 12px;
+  background-repeat: no-repeat;
 }
 
 .answer-img {

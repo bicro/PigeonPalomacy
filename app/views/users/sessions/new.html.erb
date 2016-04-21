@@ -18,16 +18,14 @@
               <%= devise_error_messages! %>
             </div>
           </div>
-          <div class="row">
-            <div class="large-12 columns">
+          <div class="registration-basic row clearfix">
+            <div class="registration-basic-field large-12 columns">
               <div class="field">
-                <%= f.label :email, class: "field_label required"%><br />
+                <%= f.label :email, class: "field_label required"%>
                 <%= f.email_field :email, placeholder: "victoriabian@gmail.com", class: "registration-field-box-blue" %>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
+            <div class="registration-basic-field large-12 columns">
               <div class="field">
                 <%= f.label :password, class: "field_label required"  %>
                 <%= f.password_field :password, placeholder: "Password", autocomplete: "off", class: "registration-field-box-green"  %>
@@ -35,15 +33,15 @@
             </div>
           </div>
           <% if devise_mapping.rememberable? -%>
-            <div class="field">
+            <div class="registration-remember field clearfix">
               <%= f.check_box :remember_me %>
               <%= f.label :remember_me %>
             </div>
           <% end -%>
-          <div class="actions">
+          <div class="registration-action clearfix">
             <%= f.submit "Log In", class: "button registration-button" %>
+           <div class="registration-link">Don't have an account?<%= render "users/shared/links" %></div>
           </div>
-          <%= render "users/shared/links" %>
         </div>
       </div>
     </div>
