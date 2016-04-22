@@ -16,32 +16,24 @@ class Submission < ActiveRecord::Base
     # Returns a list of the closest experts to my
     # submission. Assumes this object is geocoded.
     def experts
-        begin
-            number_experts = 3
+        number_experts = 3
 
-            experts = []
+        experts = []
 
-            User.all.each do |pigeon_expert| 
-                distance = distance_to([pigeon_expert.latitude, 
-                                        pigeon_expert.longitude])    
+        User.all.each do |pigeon_expert| 
+            distance = distance_to([pigeon_expert.latitude, 
+                                    pigeon_expert.longitude])    
 
-                index_and_distance = largest_distance(experts)
+            index_and_distance = largest_distance(experts)
 
-                if experts.size < number_experts
-                    experts << pigeon_expert
-                elsif experts.size == number_experts && distance < index_and_distance[1]
-                    experts.delete_at(index_and_distance[0])
-                    experts << pigeon_expert
-                end
-            end
-            return experts.sort_by{ |expert| self.distance_to([expert.latitude, expert.longitude])}
-        rescue
-            if User.all.count < 3
-                return User.all
-            else
-                return User.take(3)
+            if experts.size < number_experts
+                experts << pigeon_expert
+            elsif experts.size == number_experts && distance < index_and_distance[1]
+                experts.delete_at(index_and_distance[0])
+                experts << pigeon_expert
             end
         end
+        return experts.sort_by{ |expert| self.distance_to([expert.latitude, expert.longitude])}
     end
 
     # Returns [index, distance], where index is the position
