@@ -86,13 +86,6 @@ describe Submission do
         @submission.answers.include? Answer.find(answer2.id)
     end
 
-    it 'should find the closest experts when less than 3 exist' do 
-        exp1 = User.create!({email: "tom@berkeley.edu", name: "tom lin", phone: "5105415041", password: "password", street_address_1: "2715 Dwight Way", street_address_2: "#22", city: "Berkeley", state: "CA", zipcode: "94704", preferred_contact: "phone", expertise_description: "I helped pigeons before", country: "US"}) 
-        exp2 = User.create!({email: "random@berkeley.edu", name: "random name", phone: "5105415041", password: "password", street_address_1: "1773 Oxford St", street_address_2: "#22", city: "Berkeley", state: "CA", zipcode: "94709", preferred_contact: "phone", expertise_description: "I helped pigeons before", country: "US"}) 
-
-        expect(@submission.experts.count == 2).to be true
-    end
-
     it 'should find the closest experts when more than 3 exist' do
         exp1 = User.create!({email: "tom@berkeley.edu", name: "tom lin", phone: "5105415041", password: "password", street_address_1: "2715 Dwight Way", street_address_2: "#22", city: "Berkeley", state: "CA", zipcode: "94704", preferred_contact: "phone", expertise_description: "I helped pigeons before", country: "US"}) 
         exp2 = User.create!({email: "random@berkeley.edu", name: "random name", phone: "5105415041", password: "password", street_address_1: "1773 Oxford St", street_address_2: "#22", city: "Berkeley", state: "CA", zipcode: "94709", preferred_contact: "phone", expertise_description: "I helped pigeons before", country: "US"}) 
