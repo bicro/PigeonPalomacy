@@ -1,4 +1,4 @@
-.registration {
+.registration, .password {
     width: 480px;
     left: calc(50% - 240px);
     position: relative;
@@ -125,5 +125,9 @@
     background-repeat: no-repeat;
 }
 
+.required::after {
+    content: " *";
+    color: #DE6868;
+}
 
 
