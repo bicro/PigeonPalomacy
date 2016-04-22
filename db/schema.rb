@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421225900) do
+ActiveRecord::Schema.define(version: 20160422180304) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -76,11 +76,6 @@ ActiveRecord::Schema.define(version: 20160421225900) do
 
   add_index "settings", ["thing_type", "thing_id", "var"], name: "index_settings_on_thing_type_and_thing_id_and_var", unique: true
 
-  create_table "shelter_images", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "shelter_image"
-  end
-
   create_table "submission_answers", force: :cascade do |t|
     t.integer  "submission_id"
     t.integer  "answer_id"
@@ -126,6 +121,8 @@ ActiveRecord::Schema.define(version: 20160421225900) do
     t.decimal  "latitude",               precision: 10, scale: 6
     t.string   "street_address_1"
     t.string   "street_address_2"
+    t.string   "shelter_image_1"
+    t.string   "shelter_image_2"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

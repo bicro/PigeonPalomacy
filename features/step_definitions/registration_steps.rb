@@ -44,3 +44,9 @@ Then /^email of "([^\"]*)" should be "([^\"]*)"$/ do |name, value|
   User.where(:name => name).first.email.should eq(value)
 end
 
+And /^the user "([^\"]*)" should have "([^\"]*)" in database$/ do |name, filename|
+  matched_users = User.where(:name => name)
+  matched_users.size.should > 0
+  matched_users.first.shelter_image_1.url.should include(filename)
+end
+

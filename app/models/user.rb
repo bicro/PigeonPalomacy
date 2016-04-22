@@ -1,19 +1,13 @@
 class User < ActiveRecord::Base
 
+  mount_uploader :shelter_image_1, ShelterImageUploader
+  mount_uploader :shelter_image_2, ShelterImageUploader
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   
   validates :street_address_1, :city, :state, :zipcode, :country, :preferred_contact, :expertise_description, presence: true
-  
-  validate :attachment_count_within_bounds
 
   before_save :infer_address_and_coordinates
-
-  has_many :shelter_images
-
-  accepts_nested_attributes_for :shelter_images,
-    :reject_if => proc {|attributes|
-      attributes.all? {|k,v| v.blank?}
-    }
 
   def active_for_authentication?
     super && approved?
@@ -49,9 +43,4 @@ class User < ActiveRecord::Base
     def build_clean_address(record)
       [record.street_address_1,record.street_address_2,record.city,record.state,record.zipcode,record.country].to_a.compact.join(",")
     end
-
-    def attachment_count_within_bounds
-      return if shelter_images.blank?
-      errors.add("Too many shelter images uploaded") if shelter_images.size > 2
-    end  
 end
