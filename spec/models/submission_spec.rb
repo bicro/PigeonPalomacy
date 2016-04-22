@@ -109,6 +109,6 @@ describe Submission do
     end
 
     it 'sad path: should not find the closest expert when none exist' do 
-        expect(@submission.experts.count == 0r).to be true
+        expect(@submission.experts.count == 0).to be true
     end
  end
