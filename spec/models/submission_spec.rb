@@ -75,11 +75,7 @@ describe Submission do
    it 'should say an expert is needed' do
         @submission.need_expert?.should be true
    end
-    
-    it 'should find the closest expert' do
-        # TODO!
-    end
-    
+
     it 'should add an answer to this submission' do
         answer2 = Answer.create({content: "Yes", expert_score: 1.0})
         @submission.add_answer answer2.id
@@ -99,4 +95,20 @@ describe Submission do
         end
     end
 
+    it 'should not find the expert in New York when the submission is in California' do
+        exp1 = User.create!({email: "tom@berkeley.edu", name: "tom lin", phone: "5105415041", password: "password", street_address_1: "2715 Dwight Way", street_address_2: "#22", city: "Berkeley", state: "CA", zipcode: "94704", preferred_contact: "phone", expertise_description: "I helped pigeons before", country: "US"}) 
+        exp2 = User.create!({email: "random@berkeley.edu", name: "random name", phone: "5105415041", password: "password", street_address_1: "1773 Oxford St", street_address_2: "#22", city: "Berkeley", state: "CA", zipcode: "94709", preferred_contact: "phone", expertise_description: "I helped pigeons before", country: "US"}) 
+        exp3 = User.create!({email: "bernie@berkeley.edu", name: "bernie trump", phone: "5105415041", password: "password", street_address_1: "2128 Oxford St", street_address_2: "#22", city: "Berkeley", state: "CA", zipcode: "94709", preferred_contact: "phone", expertise_description: "I helped pigeons before", country: "US"}) 
+        exp4 = User.create!({email: "cruz@berkeley.edu", name: "bernie trump", phone: "5105415041", password: "password", street_address_1: "80 Delancey St", street_address_2: "#22", city: "New York", state: "NY", zipcode: "10002", preferred_contact: "phone", expertise_description: "I helped pigeons before", country: "US"}) 
+        
+        expect(@submission.experts.count == 3).to be true
+        
+        @submission.experts.each do |expert|
+            expect(expert.email != "cruz@berkeley.edu"). to be true
+        end
+    end
+
+    it 'sad path: should not find the closest expert when none exist' do 
+        expect(@submission.experts.count == 0r).to be true
+    end
  end
