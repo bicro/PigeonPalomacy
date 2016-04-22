@@ -4,11 +4,14 @@
 	<h3 id="conclusion-header" class="survey-header">Your pigeon needs help.</h3>
 
 	<div id="expert-list-container">
+		<p id="expert-introduction">
+		Please contact one of the nearby pigeon experts below for help.
+		</p>
 		<ul id="expert-list">
 			<% @submission.experts.each do |expert| %>
 
-			<li>
-				<%= expert.email %>
+			<li class="expert-list-item">
+				<%= expert.name %>: <%= expert.email %>
 			</li>
 
 			<% end %>

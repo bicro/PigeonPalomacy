@@ -14,19 +14,15 @@ class Submission < ActiveRecord::Base
     end
     
     # Returns a list of the closest experts to my
-    # submission.
+    # submission. Assumes this object is geocoded.
     def experts
-
-        return []
-        #raise "This object is not geocoded" unless self.geocoded?
-
-        number_experts = 5
+        number_experts = 3
 
         experts = []
 
         User.all.each do |pigeon_expert| 
-            distance = distance_to([Float(pigeon_expert.longitude), 
-                                    Float(pigeon_expert.latitude)])    
+            distance = distance_to([pigeon_expert.latitude, 
+                                    pigeon_expert.longitude])    
 
             index_and_distance = largest_distance(experts)
 
@@ -37,8 +33,7 @@ class Submission < ActiveRecord::Base
                 experts << pigeon_expert
             end
         end
-
-        return experts
+        return experts.sort_by{ |expert| self.distance_to([expert.latitude, expert.longitude])}
     end
 
     # Returns [index, distance], where index is the position
@@ -50,11 +45,8 @@ class Submission < ActiveRecord::Base
 
         index = 0
         experts.each do |expert|
-            exp_dst = self.distance_to([expert.longitude, 
-                                        expert.latitude])  
-
-            puts expert.email
-            puts exp_dst
+            exp_dst = self.distance_to([expert.latitude, 
+                                        expert.longitude])  
 
             if exp_dst > largest_dist
                 largest_index = index
