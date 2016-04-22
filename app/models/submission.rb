@@ -16,17 +16,12 @@ class Submission < ActiveRecord::Base
     # Returns a list of the closest experts to my
     # submission.
     def experts
-
+        return []
         #raise "This object is not geocoded" unless self.geocoded?
 
         number_experts = 5
 
         experts = []
-
-        puts "my lat and long"
-        puts self.latitude
-        puts self.longitude
-        puts '____________'
 
         User.all.each do |pigeon_expert| 
             distance = distance_to([Float(pigeon_expert.longitude), 
