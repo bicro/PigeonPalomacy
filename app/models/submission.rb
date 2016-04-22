@@ -20,6 +20,8 @@ class Submission < ActiveRecord::Base
 
         experts = []
 
+        return experts
+
         User.all.each do |pigeon_expert| 
             distance = distance_to([pigeon_expert.latitude, 
                                     pigeon_expert.longitude])    
