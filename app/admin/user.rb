@@ -19,29 +19,64 @@ permit_params :approved
 scope :all
 scope("Not Approved", :default => true) { |scope| scope.where(approved: false) }
 
+show do
+    attributes_table do
+        row :name
+        row :approved
+        row :phone
+        row :email
+        row "Address Line 1" do 
+            user.street_address_1
+        end
+        row "Address Line 2" do 
+            user.street_address_2
+        end
+        row :city
+        row :state
+        row :zipcode
+        row :country
+        row "Computer Inferred Address" do
+            user.inferred_address
+        end
+        row "Preferred Contact" do
+            user.preferred_contact
+        end
+        row "Expertise Description" do
+            user.expertise_description
+        end
+        row "Shelter Image 1" do
+            image_tag user.shelter_image_1.url
+        end
+        row "Shelter Image 2" do
+            image_tag user.shelter_image_2.url
+        end
+    end
+  end
+
 index do
     column :name
     column :approved
     column :phone
     column :email
-    column :street_address_1
-    column :street_address_2
     column :city
     column :state
-    column :zipcode
     column :country
-    column :inferred_address
-    column "Preferred Contact", :preferred_contact
     column "Expertise Description", :expertise_description
-    column "Approve User" do |user|
+    column "Approve User" do |user|   
         if user.approved?
             span "Already Approved"
         else
             link_to "Approve", approve_admin_user_path(user.id), method: :put
         end
     end
-    column "Delete User" do |user|
-        link_to "Delete User", admin_user_path(user.id), method: :delete
+    actions
+end
+
+action_item :view, only: :show do
+    if user.approved?
+        span "Already Approved"
+    else
+        link_to "Approve", approve_admin_user_path(user.id), method: :put
     end
 end
 
