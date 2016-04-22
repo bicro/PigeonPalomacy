@@ -10,3 +10,4 @@ Scenario: As a pigeon expert I want to upload shelter images in signup form as p
  Then "Robert Lin" should be registered
  Then I should be on the home page
  And I should see "You have signed up successfully but your account has not been approved by your administrator yet."
+ And the user "Robert Lin" should have "pigeon.png" in database
