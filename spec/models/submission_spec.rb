@@ -7,6 +7,9 @@ describe Submission do
         @submission.add_answer @answer.id  
         @submission.longitude = -122.266247
         @submission.latitude = 37.875577
+
+        @submission.stub(:distance_to).and_return(100)
+
         @submission.save
 
         Geocoder.configure(:lookup => :test)
@@ -66,6 +69,7 @@ describe Submission do
               }
             ]
         )   
+
     end
     
    it 'should say an expert is needed' do
