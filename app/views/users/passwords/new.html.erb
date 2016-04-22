@@ -1,16 +1,32 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, :class => "password" }) do |f| %>
+<%= devise_error_messages! %>
+<div class="row">
+	<div class="large-6 large-centered columns">
+		<div class="registration-header row">
+			<div class="large-12 columns">
+				<h3 class="title op-8">Forgot Your Password?</h3>
+			</div>      	
+		</div>
+	      <div class="registration-description row">
+	        <p class="large-12 columns op-8">Enter your email address and we will send you a link to reset your password.
+	        </p>
+	      </div>    	
+	</div>
+	<div class="registration-container row">
+		<div class="large-11 large-centered columns">
+			<div class="registration-basic row clearfix">
+				<div class="registration-basic-field large-12 columns">
+					<div class="field">
+						<%= f.label :email, class: "field_label" %>
+						<%= f.email_field :email, autofocus: true %>
+					</div>  				
+				</div>
+			</div>
+			<div class="registration-action actions clearfix">
+				<%= f.submit "Send Me Reset Password Instructions", class: "button" %>
+			</div>
+		</div>
+	</div>
+</div>
 <% end %>
-
-<%= render "users/shared/links" %>
+<!-- <%= render "users/shared/links" %> -->

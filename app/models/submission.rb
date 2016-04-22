@@ -13,11 +13,53 @@ class Submission < ActiveRecord::Base
         return answers.sum(:expert_score) >= EXPERT_SCORE_THRESHOLD
     end
     
-    def expert 
-       #find nearest expert 
-       # TODO fix me!
+    # Returns a list of the closest experts to my
+    # submission. Assumes this object is geocoded.
+    def experts
+        number_experts = 3
+
+        experts = []
+
+        User.all.each do |pigeon_expert| 
+            distance = distance_to([pigeon_expert.latitude, 
+                                    pigeon_expert.longitude])    
+
+            index_and_distance = largest_distance(experts)
+
+            if experts.size < number_experts
+                experts << pigeon_expert
+            elsif experts.size == number_experts && distance < index_and_distance[1]
+                experts.delete_at(index_and_distance[0])
+                experts << pigeon_expert
+            end
+        end
+        return experts.sort_by{ |expert| self.distance_to([expert.latitude, expert.longitude])}
     end
-    
+
+    # Returns [index, distance], where index is the position
+    # of the expert in EXPERTS and distance is the distance 
+    # to that expert.
+    def largest_distance(experts)
+        largest_dist = -1
+        largest_index = -1
+
+        index = 0
+        experts.each do |expert|
+            exp_dst = self.distance_to([expert.latitude, 
+                                        expert.longitude])  
+
+            if exp_dst > largest_dist
+                largest_index = index
+                largest_dist = exp_dst
+            end
+
+            index += 1
+        end
+
+        return [largest_index, largest_dist]
+    end
+
+
     def info_text 
         # TODO fix me!
     end
@@ -34,3 +76,4 @@ class Submission < ActiveRecord::Base
         end
     end
 end
+

@@ -1,47 +1,45 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true, :class => "registration"}) do |f| %>
   <div class="row">
     <div class="large-6 large-centered columns">
-      <div class="row">
+      <div class="registration-header row">
         <div class="large-12 columns">
-          <div class="title op-8">Become an expert for Palomacy</div>
+          <h3 class="title op-8">Become an expert for Palomacy</h3>
         </div>
       </div>
-      <div class="row">
-        <div class="large-12 columns op-8">
+      <div class="registration-description row">
+        <p class="large-12 columns op-8">
           Thanks for volunteering to become an expert for Palomacy. There are lots of ways you can help! Let's start with introducing yourself.
-        </div>
+        </p>
       </div>
-      <div class=row>
+      <div class="registration-container row">
         <div class="large-11 large-centered columns">
           <div class="row">
             <div class="large-12 columns">
               <%= devise_error_messages! %>
             </div>
           </div>
-          <div class="row">
-            <div class="large-6 columns">
+          <div class="registration-basic row clearfix">
+            <div class="registration-basic-field large-6 columns">
               <div class="field">
-                <%= f.label :name, class: "field_label required" %><br />
+                <%= f.label :name, class: "field_label required" %>
                 <%= f.text_field :name, placeholder: "Victoria Bian", class: "registration-field-box-blue" %>
               </div>
             </div>
-            <div class="large-6 columns">
+            <div class="registration-basic-field large-6 columns">
               <div class="field">
-                <%= f.label :email, class: "field_label required"%><br />
+                <%= f.label :email, class: "field_label required"%>
                 <%= f.email_field :email, placeholder: "victoriabian@gmail.com", class: "registration-field-box-regular" %>
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="large-6 columns">
+            <div class="registration-basic-field large-6 columns">
               <div class="field">
-                <%= f.label :phone, class: "field_label required"%><br />
+                <%= f.label :phone, class: "field_label required"%>
                 <%= f.text_field :phone, placeholder: "e.g. 510-333-2416", class: "registration-field-box-red" %>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="large-6 columns">
+          <div class="registration-password row clearfix">
+            <div class="registration-password-field large-6 columns">
               <div class="field">
                 <%= f.label :password, class: "field_label required"  %>
                 <%= f.password_field :password, placeholder: "Password", autocomplete: "off", class: "registration-field-box-green"  %>
@@ -52,58 +50,82 @@
                 </div>
               </div>
             </div>
-            <div class="large-6 columns">
+            <div class="registration-password-field large-6 columns">
               <div class="field">
-                <%= f.label :password_confirmation, class: "field_label required"  %><br />
+                <%= f.label :password_confirmation, class: "field_label required"  %>
                 <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", autocomplete: "off", class: "registration-field-box-yellow" %>
               </div>
             </div>
           </div>
-          <div class="field">
-            <%= f.label :street_address_1, "Address Line 1", class: "field_label required"  %><br />
-            <%= f.text_field :street_address_1, placeholder: "2310 Dwight Way", class: "registration-field-box-yellow" %>
-            <div class="reminder-text">
-              Stree address, P.O. box, company name, c/o
+          <div class="registration-address row clearfix">
+            <div class="registration-address-field large-6 columns">
+              <div class="field">
+                <%= f.label :street_address_1, "Address Line 1", class: "field_label required"  %>
+                <%= f.text_field :street_address_1, placeholder: "2310 Dwight Way", class: "registration-field-box-yellow" %>
+                <div class="reminder-text">
+                  Stree address, P.O. box, company name, c/o
+                </div>
+              </div>              
+            </div>
+            <div class="registration-address-field large-6 columns">
+              <div class="field">
+                <%= f.label :street_address_2, "Address Line 2", class: "field_label"  %>
+                <%= f.text_field :street_address_2, placeholder: "Unit 22", class: "registration-field-box-yellow" %>
+                <div class="reminder-text">
+                  Apartment, suite, unit, building, floor, etc.
+                </div>
+              </div>            
+            </div>
+            <div class="registration-location row clearfix">
+              <div class="registration-location-field large-6 columns">
+                <div class="field">
+                  <%= f.label :city, class: "field_label required"  %>
+                  <%= f.text_field :city, placeholder: "Berkeley", class: "registration-field-box-yellow" %>
+                </div>           
+              </div>
+              <div class="registration-location-field large-6 columns">
+                <div class="field">
+                  <%= f.label :state, class: "field_label required"  %>
+                  <%= f.text_field :state, placeholder: "CA", class: "registration-field-box-yellow" %>
+                </div>         
+              </div>
+            </div>
+            <div class="registration-location row clearfix">
+              <div class="registration-location-field large-6 columns">
+                <div class="field">
+                  <%= f.label :zipcode, class: "field_label required"  %>
+                  <%= f.text_field :zipcode, placeholder: "94704", class: "registration-field-box-yellow" %>
+                </div>         
+              </div>
+              <div class="registration-location-field large-6 columns">
+                <div class="field">
+                  <%= f.label :country, class: "field_label required"  %>
+                  <%= f.text_field :country, placeholder: "USA", class: "registration-field-box-yellow" %>
+                </div>        
+              </div>              
             </div>
           </div>
-          <div class="field">
-            <%= f.label :street_address_2, "Address Line 2", class: "field_label"  %><br />
-            <%= f.text_field :street_address_2, placeholder: "Unit 22", class: "registration-field-box-yellow" %>
-            <div class="reminder-text">
-              Apartment, suite, unit, building, floor, etc.
+          <div class="registration-more row clearfix">
+            <div class="registration-more-field">
+              <div class="field">
+                <%= f.label :preferred_contact, "Preferred contact", class: "field_label required"  %>
+                <%= f.text_field :preferred_contact, placeholder: "e.g. Prefer Monday through Friday mornings by email.", class: "registration-field-box-yellow" %>
+              </div>
             </div>
-          </div>
-          <div class="field">
-            <%= f.label :city, class: "field_label required"  %><br />
-            <%= f.text_field :city, placeholder: "Berkeley", class: "registration-field-box-yellow" %>
-          </div>
-          <div class="field">
-            <%= f.label :state, class: "field_label required"  %><br />
-            <%= f.text_field :state, placeholder: "CA", class: "registration-field-box-yellow" %>
-          </div>
-          <div class="field">
-            <%= f.label :zipcode, class: "field_label required"  %><br />
-            <%= f.text_field :zipcode, placeholder: "94704", class: "registration-field-box-yellow" %>
-          </div>
-          <div class="field">
-            <%= f.label :country, class: "field_label required"  %><br />
-            <%= f.text_field :country, placeholder: "USA", class: "registration-field-box-yellow" %>
-          </div>
-          <div class="field">
-            <%= f.label :preferred_contact, class: "field_label required"  %><br />
-            <%= f.text_field :preferred_contact, placeholder: "Call", class: "registration-field-box-yellow" %>
-          </div>
-          <div class="field">
-            <%= f.label :expertise_description, "Briefly Describe Your Expertise", class: "field_label required"  %><br />
-            <%= f.text_field :expertise_description, class: "registration-field-box-yellow" %>
+            <div class="registration-more-field">
+              <div class="field">
+                <%= f.label :expertise_description, "Briefly Describe Your Expertise", class: "field_label required"  %>
+                <%= f.text_field :expertise_description, placeholder: "e.g. I have 5 years of experience in...", class: "registration-more-expertise" %>
+              </div>                
+            </div>          
           </div>
           <%= f.fields_for :shelter_images do |f| %>
             <%= f.file_field :shelter_image%>
           <% end %>
-          <div class="actions">
+          <div class="registration-action clearfix actions">
             <%= f.submit "Submit", class: "button registration-button" %>
+            <div class="registration-link">Already have an account?<strong><%= render "users/shared/links" %></strong></div>
           </div>
-          <%= render "users/shared/links" %>
         </div>
       </div>
     </div>

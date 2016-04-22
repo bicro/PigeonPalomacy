@@ -3,7 +3,6 @@ class SubmissionsController < ApplicationController
 
   def show
     @submission = Submission.find(params[:id])
-    @expert = @submission.expert
   end
 
   def new
