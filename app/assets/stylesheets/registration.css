@@ -1,0 +1,133 @@
+.registration, .password {
+    width: 480px;
+    left: calc(50% - 240px);
+    position: relative;
+    top: 160px;
+    margin-bottom: 40px;
+    /* transform: translateY(40px); */
+    /* -webkit-transform: translateY(40px); */
+    -moz-transform: translateY(40px);
+    -o-transform: translateY(40px);
+    /* -webkit-transition: cubic-bezier(0.19, 1, 0.22, 1) 2s; */
+    -moz-transition: cubic-bezier(0.19, 1, 0.22, 1) 2s;
+    -o-transition: cubic-bezier(0.19, 1, 0.22, 1) 2s;
+    /* transition: cubic-bezier(0.19, 1, 0.22, 1) 2s; */  
+}
+
+.registration-header {
+    margin-bottom: 20px;
+}
+
+.registration-description {
+    margin-bottom: 20px;
+}
+
+.registration-container {
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    padding: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.registration-basic-field, .registration-password-field, .registration-address-field, .registration-location-field, .registration-more-field {
+    margin-bottom: 30px;
+}
+
+.field_label {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.field input {
+    height: 36px;
+    border: 0;
+    box-shadow: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+
+.field input:focus {
+    border-color: #52bdec;
+}
+
+.reminder-text {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.4);
+    margin-top: 5px;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: rgba(0, 0, 0, 0.2) !important;
+}
+
+::-moz-placeholder {
+    opacity: rgba(0, 0, 0, 0.2) !important;
+}
+
+:-ms-input-placeholder {
+    opacity: rgba(0, 0, 0, 0.2) !important;
+}
+
+.registration-password-field, .registration-location-field {
+    float: left;
+    margin-right: 20px;
+    width: 209px;
+}
+
+.registration-password-field:last-child, .registration-location-field:last-child {
+    margin-right: 0;
+}
+
+.registration-button {
+    float: left;
+}
+
+.registration-link {
+    float: right;
+    color: #52bdec;
+    position: relative;
+}
+
+.registration-link a {
+    float: right;
+}
+
+#user_remember_me {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    float: left;
+    margin: 0;
+    margin-right: 10px;
+}
+.registration-remember {
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.registration-remember input:checked {
+    background-image: url('check.png');
+    background-size: 16px;
+    background-repeat: no-repeat;
+}
+
+.required::after {
+    content: " *";
+    color: #DE6868;
+}
+
+

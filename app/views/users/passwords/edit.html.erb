@@ -1,25 +1,42 @@
-<h2>Change your password</h2>
-
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, :class => "password" }) do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
-
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Change my password" %>
+  <div class="row">
+    <div class="large-6 large-centered columns">
+      <div class="registration-header row">
+        <div class="large-12 columns">
+          <h3 class="title op-8">Change Your Password</h3>
+        </div>        
+      </div>
+      <div class="registration-description row">
+        <p class="large-12 columns op-8">You can directly change your password here. Your new password must be at least 8-character long.
+        </p>
+      </div>      
+    </div>
+    <div class="registration-container row">
+      <div class="large-11 large-centered columns">
+        <div class="registration-basic row clearfix">
+          <div class="registration-basic-field large-12 columns">
+            <div class="field">
+              <%= f.label :password, class="field_label", "New password" %><br />
+              <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %>
+              <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+            </div>        
+          </div>
+          <div class="registration-basic-field large-12 columns">
+            <div class="field">
+              <%= f.label :password_confirmation, class="field_label", "Confirm new password" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off" %>
+            </div>          
+          </div>
+        </div>
+        <div class="registration-action actions clearfix">
+          <%= f.submit "Change my password", class="button %>
+        </div>
+      </div>
+    </div>
   </div>
 <% end %>
-
-<%= render "users/shared/links" %>
+<!-- <%= render "users/shared/links" %> -->
