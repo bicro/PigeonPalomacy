@@ -19,10 +19,16 @@
 
 @import url('https://fonts.googleapis.com/css?family=Droid+Sans:400,500,600,700');
 
-
 html {
   height: 100%;
 }
+
+/*rgba(0, 0, 0, 0.8) = #333333
+rgba(0, 0, 0, 0.6) = #666666
+rgba(0, 0, 0, 0.4) = #999999
+rgba(0, 0, 0, 0.2) = #CCCCCC
+rgba(0, 0, 0, 0.1) = #E5E5E5
+rgba(0, 0, 0, 0.05) = #F2F2F2*/
 
 body {
   position: absolute;
@@ -31,7 +37,7 @@ body {
   font-style: normal;
   line-height: 1.5;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.8);
+  color: #333333;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -79,7 +85,11 @@ a {
 
 input {
   -webkit-appearance: none;
+  -moz-appearance: none;
   border-radius: 0;
+}
+
+input:focus {
   outline: none;
 }
 
@@ -134,8 +144,6 @@ input {
   border: 0;
   border-radius: 3px;
   white-space: nowrap;
-  box-sizing: border-box;
-  outline: none;
   font-size: 14px;
   font-weight: 600;
   font-style: normal;
@@ -145,11 +153,6 @@ input {
   font-family: 'droid sans';
   margin-right: 8px;
 }
-
-/*.button:hover {
-  background: #AF95FF;
-}*/
-
 
 .logo {
   width: 125px;
@@ -174,7 +177,7 @@ h2 {
   font-size: 36px;
   font-weight: 500;
   margin-bottom: 20px;
-  color: rgba(0, 0, 0, 0.8);
+  color: #333333;
   margin-top: 0;
 }
 
@@ -182,7 +185,7 @@ h3 {
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 20px;
-  color: rgba(0, 0, 0, 0.8);
+  color: #333333;
   margin-top: 0;
 }
 
@@ -190,7 +193,7 @@ h4 {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 10px;
-  color: rgba(0, 0, 0, 0.8);
+  color: #333333;
   margin-top: 0;
 }
 
@@ -198,17 +201,16 @@ p {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 0;
-  color: rgba(0, 0, 0, 0.6);
+  color: #666666;
 }
 
 hr {
   display: block;
-  box-sizing: content-box;
   height: 0;
   width: 100px;
   margin: 30px auto;
   border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.10);
+  border-top: 1px solid #E5E5E5;
 }
 
 strong {
@@ -235,17 +237,13 @@ li {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 0;
-  color: rgba(0, 0, 0, 0.8);
+  color: #333333;
   list-style: none;
 }
 
 blockquote {
   font-size: 18px;
   line-height: 32px;
-}
-
-.margin-left {
-   margin-left: 5px !important; 
 }
 
 .notice {
@@ -259,7 +257,6 @@ blockquote {
     color: #FFFFFF;
     padding: 5px 20px;
     display: none;
-    z-index: 11;
 }
 
 .alert {
@@ -273,13 +270,12 @@ blockquote {
     color: #FFFFFF;
     padding: 5px 20px;
     display: none;
-    z-index: 11;
 }
 
 .nav {
   background-color: #FFFFFF;
   height: 100px;
-  box-shadow: 0 0 1px rgba(41, 41, 41, 0.2);
+  box-shadow: 0 0 1px #CCCCCC;
   padding: 10px 20px;
   width: 100%;
   z-index: 10;
@@ -311,19 +307,12 @@ blockquote {
   margin-right: 5px;
   font-weight: 700;
   padding: 5px 15px;
-  /*  border: 2px solid #52bdec;*/
   border-radius: 5px;
   cursor: pointer;
 }
 
 .nav-link-home, .nav-link-about {
   border-color: transparent;
-}
-
-.nav-link-facebook {
-  /*    margin-right: 10px;*/
-  /* border-color: #3b5998; */
-  /* color: #3b5998; */
 }
 
 .nav-link-item-dropdown {
@@ -334,8 +323,8 @@ blockquote {
   background-color: #FFFFFF;
   color: #52bdec;
   padding: 10px 15px 5px 15px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #F2F2F2;
+  box-shadow: 0 1px 2px 0 #E5E5E5;
 }
 
 .nav-link-login-admin, .nav-link-login-expert {
@@ -345,8 +334,9 @@ blockquote {
 }
 
 .nav-link-login-admin:hover, .nav-link-login-expert:hover {
-  color: rgba(0, 0, 0, 0.4);
+  color: #999999;
 }
+
 .nav-link-item:hover {
-    color: rgba(0, 0, 0, 0.4);
+    color: #999999;
 }

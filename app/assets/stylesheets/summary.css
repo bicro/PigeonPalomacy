@@ -1,29 +1,21 @@
 .summary-container {
   background-color: #FFFFFF;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px 0 #E5E5E5;
   border-radius: 3px;
   padding: 20px 20px 25px 20px;
   position: relative;
   margin-bottom: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid #F2F2F2;
 }
 
 .summary-answer {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #F2F2F2;
     margin-bottom: 10px;
 }
 
-#submission-result-container {
-/*    float: left;
-    left: 40px;
-    position: relative;*/
-}
-
 #map-container {
-/*    float: right;*/
     position: relative;
     left: calc(50% - 300px);
-/*    height: auto;*/
     top: 160px;
     width: 600px;
 }
