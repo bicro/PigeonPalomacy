@@ -16,6 +16,7 @@ class Submission < ActiveRecord::Base
     # Returns a list of the closest experts to my
     # submission.
     def experts
+
         return []
         #raise "This object is not geocoded" unless self.geocoded?
 
@@ -83,3 +84,4 @@ class Submission < ActiveRecord::Base
         end
     end
 end
+
