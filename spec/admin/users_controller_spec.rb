@@ -42,6 +42,14 @@ describe Admin::UsersController, type: :controller do
       expect(assigns(:users)).to include(a_user)
     end
   end
+
+  describe "GET show" do
+    it "displays a particular user" do
+      a_user = User.create!({email: "test@berkeley.edu", name: "tom lin", phone: "5105415041", password: "password", street_address_1: "2715 Dwight Way", street_address_2: "#22", city: "Berkeley", state: "CA", zipcode: "94704", preferred_contact: "phone", expertise_description: "I helped pigeons before", country: "US"}) 
+      get :show, id: a_user.id
+      expect(assigns(:user)).to eq(a_user)
+    end
+  end
   
   describe "PUT approve" do
     it "approves users" do

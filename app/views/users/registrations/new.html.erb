@@ -119,9 +119,14 @@
               </div>                
             </div>          
           </div>
-          <%= f.fields_for :shelter_images do |f| %>
-            <%= f.file_field :shelter_image%>
-          <% end %>
+          <div class="field">
+            <%= f.label :shelter_image_1, "Shelter Image 1"%>
+            <%= f.file_field :shelter_image_1, class: "field_label"%>
+          </div>
+          <div class="field">
+            <%= f.label :shelter_image_2, "Shelter Image 2"%>
+            <%= f.file_field :shelter_image_2, class: "field_label"%>
+          </div>
           <div class="registration-action clearfix actions">
             <%= f.submit "Submit", class: "button registration-button" %>
             <div class="registration-link">Already have an account?<strong><%= render "users/shared/links" %></strong></div>
