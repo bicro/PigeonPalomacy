@@ -35,6 +35,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'rails-settings-cached', "~> 0.5.6"
 
 gem 'foundation-rails', '5.4.5'
+gem 'geoip'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -47,7 +48,6 @@ gem 'foundation-rails', '5.4.5'
 gem 'figaro' #for aws keys management
 gem 'carrierwave'
 gem 'carrierwave-aws'
-
 
 gem "codeclimate-test-reporter", group: :test, require: nil
 

@@ -39,7 +39,7 @@ describe Admin::UsersController, type: :controller do
     it "displays approved users" do
       a_user = User.create({email: "test15@berkeley.edu", name: "philip lin", phone: "5105415041", password: "password", approved: true, street_address_1: "2715 Dwight Way", street_address_2: "#22", city: "Berkeley", state: "CA", zipcode: "94704", preferred_contact: "phone", expertise_description: "I helped pigeons before", country: "US"}) 
       get :index, :scope => "all"
-      expect(assigns(:users)).to eq([a_user])
+      expect(assigns(:users)).to include(a_user)
     end
   end
   

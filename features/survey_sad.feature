@@ -20,17 +20,5 @@ Background:
    | No | 0 | 4 | 8 |
    | Yes | 1 | 5 | 9 |
    | No | 0 | 5 | 10 |
- 
-# ice-boxed for iter-4
- 
-# Scenario: Filling out no answers should fail
-#  Given I am on the survey page
-#  And I press "Find Expert"
-#  Then I should see "You did not complete the survey."
 
-# Scenario: Filling out partial information should fail
-#  Given I am on the survey page
-#  When I mark the first answer
-#  And I press "Find Expert"
-#  Then I should see "You did not complete the survey."
-
+# no sad path for this feature since there is little place for wrong user input
