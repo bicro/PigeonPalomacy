@@ -1,4 +1,5 @@
-$(document).ready(function() {
+var ready; ready = function() {
+
 	console.log('js')
 	$('.survey').addClass('survey-active');
 	console.log('nav');
@@ -14,8 +15,6 @@ $(document).ready(function() {
 			$('.nav-link-item-dropdown').show();
 		}
 	});
-});
+}
 
-$(document).change(function() {
-	$('.nav').addClass('nav-active');
-});	
+$(document).on('page:change', ready);
