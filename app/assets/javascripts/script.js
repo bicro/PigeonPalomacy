@@ -1,9 +1,5 @@
 var ready; ready = function() {
-
-	console.log('js')
 	$('.survey').addClass('survey-active');
-	console.log('nav');
-
 	$('.nav').addClass('nav-active');
 	$('.nav-link-login').click(function() {
 		console.log('clicked');
@@ -15,6 +11,18 @@ var ready; ready = function() {
 			$('.nav-link-item-dropdown').show();
 		}
 	});
+	$('html').click(function(){
+		console.log('html')
+		if ($('.nav-link-item-dropdown').hasClass('dropdown-active')) {
+			$('.nav-link-item-dropdown').hide();
+			$('.nav-link-item-dropdown').removeClass('dropdown-active')
+		}
+	});
+	$(".nav-link-item-dropdown").click(function(e){
+	  e.stopPropagation();
+	});
+	$(".nav-link-login").click(function(e){
+	  e.stopPropagation();
+	});
 }
-
 $(document).on('page:change', ready);
