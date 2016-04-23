@@ -126,5 +126,7 @@
     font-weight: 400;
     font-size: 12px;
     padding-top: 7px;
+    border: none;
+    padding-left: 0;
 }
 
