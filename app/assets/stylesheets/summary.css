@@ -1,4 +1,4 @@
-.summary-container {
+.summary-container, .expert-container {
   background-color: #FFFFFF;
   box-shadow: 0 1px 2px 0 #E5E5E5;
   border-radius: 3px;
@@ -18,4 +18,21 @@
     left: calc(50% - 300px);
     top: 160px;
     width: 600px;
+    margin-bottom: 20px;
+}
+
+.expert-list-item {
+  margin-bottom: 8px;
+}
+
+.expert-list-item:last-child {
+  margin-bottom: 0;
+}
+
+#expert-introduction, #map-intro {
+  margin-bottom: 20px;
+}
+
+.expert-container {
+  margin-bottom: 40px;
 }
