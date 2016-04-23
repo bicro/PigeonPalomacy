@@ -24,7 +24,7 @@
     border: 1px solid #F2F2F2;
 }
 
-.registration-basic-field, .registration-password-field, .registration-address-field, .registration-location-field, .registration-more-field {
+.registration-basic-field, .registration-password-field, .registration-address-field, .registration-location-field, .registration-more-field, .registration-image-field {
     margin-bottom: 30px;
 }
 
@@ -122,4 +122,9 @@
     color: #DE6868;
 }
 
+.registration-image-field .field input {
+    font-weight: 400;
+    font-size: 12px;
+    padding-top: 7px;
+}
 
