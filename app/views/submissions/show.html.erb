@@ -3,7 +3,7 @@
 	<% if @submission.need_expert? %>
 	<h3 id="conclusion-header" class="survey-header">Your pigeon needs help.</h3>
 
-	<div id="expert-list-container">
+	<div id="expert-list-container" class="expert-container">
 		<p id="expert-introduction">
 		Please contact one of the nearby pigeon experts below for help.
 		</p>
@@ -19,7 +19,7 @@
 	</div>
 
 	<p id="summary-" class="survey-description">
-	Tell your expert about your pigeon.
+	Here is a summary of your response.
 	</p>	
 	<div class="summary-container">
 		<% @submission.answers.each do |answer| %>
@@ -41,7 +41,6 @@
 <p id="map-intro">
 Need more help? Contact one of the many pigeon rescues in the map below.
 </p>
-<br>
 	<iframe src="https://www.google.com/maps/d/embed?mid=z-V-YLf26PLU.kQXZ-_QF63Xs&hl=en" width="600" height="480"></iframe>
 </div>
 
