@@ -26,7 +26,7 @@
           <li class="nav-link-item nav-link-login"><%=current_user.name%></li>
           <div class="nav-link-item-dropdown">
             <%= link_to 'Edit Info', edit_user_registration_path, :class => 'nav-link-login-expert' %> 
-            <%= link_to 'Sign Out', destroy_user_session_path, :method => "DELETE", :class => 'nav-link-login-expert' %>    
+            <%= button_to 'Sign Out', destroy_user_session_path, :method => :delete, :class => 'nav-link-login-expert nav-link-logout-expert' %>    
           </div>
         <%else%>
           <li class="nav-link-item nav-link-login">Login</li>
