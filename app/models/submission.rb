@@ -6,11 +6,13 @@ class Submission < ActiveRecord::Base
     after_validation :safe_geocode
     
     # Pigeon needs help if the sum of answer.expert_score 
-    # is greater or equal to this constant. 
-    EXPERT_SCORE_THRESHOLD = Setting["Hurt Threshold"]
-    
+    # is greater or equal to this value. 
+    def self.expert_score_threshold
+        Setting["Hurt Threshold"]
+    end    
+
     def need_expert?
-        return answers.sum(:expert_score) >= EXPERT_SCORE_THRESHOLD
+        return answers.sum(:expert_score) >= Submission.expert_score_threshold
     end
     
     # Returns a list of the closest experts to my
