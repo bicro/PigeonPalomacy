@@ -24,5 +24,13 @@ var ready; ready = function() {
 	$(".nav-link-login").click(function(e){
 	  e.stopPropagation();
 	});
+
+  setTimeout(function(){
+  	$('.notice').remove();
+	}, 5000);
+
+	setTimeout(function(){
+  	$('.alert').remove();
+	}, 5000);
 }
 $(document).on('page:change', ready);

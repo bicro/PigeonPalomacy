@@ -252,12 +252,11 @@ blockquote {
     width: 100%;
     top: 0;
     z-index: 20;
-    height: 40px;
     margin: 0;
     background-color: #52bdec;
     color: #FFFFFF;
+    height: 40px;
     padding: 5px 20px;
-    display: none;
 }
 
 .alert {
@@ -265,12 +264,11 @@ blockquote {
     width: 100%;
     top: 0;
     z-index: 20;
-    height: 40px;
     margin: 0;
     background-color: #F15C22;
     color: #FFFFFF;
+    height: 40px;
     padding: 5px 20px;
-    display: none;
 }
 
 .nav {

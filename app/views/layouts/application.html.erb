@@ -14,8 +14,6 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <nav class="nav clearfix">
       <a class="nav-logo logo" href="http://www.pigeonrescue.org/"></a>
       <ul class="nav-link">
@@ -37,6 +35,12 @@
         <%end%>
       </ul>
     </nav>
+    <% if not flash[:notice].blank? %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if not flash[:alert].blank? %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
