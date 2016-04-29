@@ -81,7 +81,7 @@ action_item :view, only: :show do
 end
 
 member_action :approve, method: :put do
-    resource.update_attributes! :approved => true
+    resource.approve!
     resource.send_account_approved_email
     redirect_to admin_users_path(:scope=>"not_approved"), notice: "User Approved!"
 end

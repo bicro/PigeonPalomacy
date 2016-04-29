@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
   def active_for_authentication?
     super && approved?
   end
+
+  def approve!
+    self.update_attributes! :approved => true
+  end
   
   def inactive_message
     if !approved?
