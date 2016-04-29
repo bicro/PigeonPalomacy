@@ -25,12 +25,12 @@ var ready; ready = function() {
 	  e.stopPropagation();
 	});
 
-  setTimeout(function(){
-  	$('.notice').remove();
-	}, 5000);
+ //  setTimeout(function(){
+ //  	$('.notice').remove();
+	// }, 5000);
 
-	setTimeout(function(){
-  	$('.alert').remove();
-	}, 5000);
+	// setTimeout(function(){
+ //  	$('.alert').remove();
+	// }, 5000);
 }
 $(document).on('page:change', ready);

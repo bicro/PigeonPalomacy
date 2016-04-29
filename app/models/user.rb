@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
   
-  validates :street_address_1, :city, :state, :zipcode, :country, :preferred_contact, :expertise_description, presence: true
+  validates :name, :street_address_1, :city, :state, :zipcode, :country, :preferred_contact, :expertise_description, presence: true
 
   before_save :infer_address_and_coordinates
 

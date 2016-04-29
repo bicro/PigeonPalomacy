@@ -24,13 +24,13 @@ Background:
 Scenario: A user with a hurt pigeon should get help
  Given I am on the survey page
  When I mark the answers for an injured pigeon
- And I press "Find Expert"
+ And I press "Submit"
  Then I should see "Your pigeon needs help."
 
 Scenario: A user with an unhurt pigeon should not get help
  Given I am on the survey page
  When I mark the answers for an uninjured pigeon
- And I press "Find Expert"
+ And I press "Submit"
  Then I should see "Your pigeon is fine."
 
 Scenario: Show pigeon rescuer map

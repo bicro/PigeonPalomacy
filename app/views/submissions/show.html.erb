@@ -1,11 +1,10 @@
-<p class="notice" id="notice"><%= notice %></p>
 <section class="survey" id="submission-result-container">
 	<% if @submission.need_expert? %>
 	<h3 id="conclusion-header" class="survey-header">Your pigeon needs help.</h3>
 
 	<div id="expert-list-container" class="expert-container">
 		<p id="expert-introduction">
-		Please contact one of the nearby pigeon experts below for help.
+		Here are three pigeon-friendly rescue experts nearby.
 		</p>
 		<ul id="expert-list">
 			<% @submission.experts.each do |expert| %>
@@ -32,8 +31,8 @@
 
 	</div>
 	<% else %>
-	<h3 id="conclusion-header" class="survey-header">Your pigeon is fine.</h3>
-	<% end %>
+	<h3 id="conclusion-header" class="survey-header">The bird may be okay on its own.</h3><h3><a href="http://www.pigeonrescue.org/resources/">Please go to the resources page to learn more.</a></h3>
+	<%end%>
 	<%= link_to 'Back', "/", class: "button"%>
 </section>
 <div id="map-container">
