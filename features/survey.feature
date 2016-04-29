@@ -31,7 +31,7 @@ Scenario: A user with an unhurt pigeon should not get help
  Given I am on the survey page
  When I mark the answers for an uninjured pigeon
  And I press "Submit"
- Then I should see "Your pigeon is fine."
+ Then I should see "The bird may be okay on its own."
 
 Scenario: Show pigeon rescuer map
   Given I am an user
