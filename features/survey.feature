@@ -34,14 +34,11 @@ Scenario: A user with an unhurt pigeon should not get help
  Then I should see "The bird may be okay on its own."
 
 Scenario: Show pigeon rescuer map
-  Given I am an user
-  And I am on the submission page
-  When I press "Send"
-  Then I should see an image with uri "www.maps.google.com"
+  Given I am on the survey page
+  When I press "Submit"
+  Then I should see an iframe with source "www.google.com"
 
 Scenario: Show preferred expert contact method
-  Given I am an user
-  And I am on the submission page
-  When I press "Send"
-  Then I should see "Contact Name:"
-  Then I should see "Contact Information:"
+  Given I am on the survey page
+  When I press "Submit"
+  Then I should see "The bird may be okay on its own"

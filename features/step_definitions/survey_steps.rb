@@ -32,3 +32,7 @@ end
 When(/^I mark the first answer$/) do
   choose("1_2")
 end
+
+Then(/^I should see an iframe with source "([^\"]*)"$/) do |src|
+  find("iframe")[:src].should include(src)
+end
