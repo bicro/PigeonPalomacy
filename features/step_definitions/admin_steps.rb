@@ -24,11 +24,11 @@ Given /^I follow the first question$/ do
   first(:link, "View").click
 end
 
-Given /^I follow the hurt threshold$/ do 
+Given /^I follow the rescue threshold$/ do 
   first(:link, "Edit").click
 end
 
-When /^I set hurt threshold to be a (.*?) of "(.*?)"$/ do |type, fill|
+When /^I set rescue threshold to be a (.*?) of "(.*?)"$/ do |type, fill|
     if type == "float"
         fill_in("Value", :with => Float(fill))
     else

@@ -19,7 +19,7 @@ permit_params :var, :value, :thing_id, :thing_type
 
 member_action :update, method: :put do
     if not is_number? params[:setting][:value]
-        redirect_to edit_admin_setting_path(resource.id), :notice => "Hurt Threshold should be numeric"
+        redirect_to edit_admin_setting_path(resource.id), :notice => "Rescue Threshold should be numeric"
         return
     end
     Setting[params[:setting][:var]] = Float(params[:setting][:value])

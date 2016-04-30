@@ -13,16 +13,16 @@ describe Admin::SettingsController, type: :controller do
   end
     
   describe "GET edit" do
-    it "edits hurt threshold in settings" do
-      hurt_threshold = Setting.where(:var => "Hurt Threshold").first
+    it "edits rescue threshold in settings" do
+      hurt_threshold = Setting.where(:var => "Rescue Threshold").first
       get :edit, :id => hurt_threshold.id
       expect(assigns(:setting)).to eq(hurt_threshold)
     end
   end
   
   describe "GET index" do
-    it "displays hurt threshold" do
-      hurt_threshold = Setting.where(:var => "Hurt Threshold").first
+    it "displays rescue threshold" do
+      hurt_threshold = Setting.where(:var => "Rescue Threshold").first
       get :index
       expect(assigns(:settings)).to include(hurt_threshold)
     end
