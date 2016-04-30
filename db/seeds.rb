@@ -26,5 +26,7 @@ Question.create({content: "Is the bird white?"}).add_answers([{content: "Yes", e
 Question.create({content: "Does it have a leg band?"}).add_answers([{content: "Yes", expert_score: 1}, 
                                                                          {content:"No", expert_score: 0},
                                                                          {content: "Unknown", expert_score: 0.5}])
-                                                                         
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+                       
+if Rails.env == "development"
+  AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+end
