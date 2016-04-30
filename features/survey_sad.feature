@@ -21,4 +21,14 @@ Background:
    | Yes | 1 | 5 | 9 |
    | No | 0 | 5 | 10 |
 
-# no sad path for this feature since there is little place for wrong user input
+
+Scenario: Empty Survey
+  Given I am on the survey page
+  When I press "Submit"
+  Then I should see "Please answer all questions!"
+
+Scenario: Partially Full Survey
+  Given I am on the survey page
+  When I mark the the first question
+  And I press "Submit"
+  Then I should see "Please answer all questions!"
