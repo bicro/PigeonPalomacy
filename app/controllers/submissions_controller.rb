@@ -6,7 +6,7 @@ class SubmissionsController < ApplicationController
   end
 
   def new
-    @questions = Question.all
+    @questions = Question.all.order(:id)
     @submission = Submission.new
   end
 
