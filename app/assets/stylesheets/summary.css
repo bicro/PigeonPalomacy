@@ -36,3 +36,11 @@
 .expert-container {
   margin-bottom: 40px;
 }
+
+.resources-link {
+  color: #52bdec;
+}
+
+.resources-link:hover {
+  text-decoration: underline;
+}

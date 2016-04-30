@@ -74,11 +74,14 @@
 
 .answer label {
   margin-left: 5px;
+  cursor: pointer;
 }
+
 
 .answer input[type=radio]:checked + label {
   color: #52bdec;
 }
+
 
 .answer input:checked {
   border-color: #52bdec;
