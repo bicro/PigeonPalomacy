@@ -28,6 +28,9 @@ When(/^I mark the answers for an uninjured pigeon$/) do
   choose("5_10")
 end
 
+When(/^I mark the the first question$/) do
+  choose("1_2")
+end
 
 When(/^I mark the first answer$/) do
   choose("1_2")

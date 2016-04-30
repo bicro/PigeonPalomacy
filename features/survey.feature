@@ -35,10 +35,6 @@ Scenario: A user with an unhurt pigeon should not get help
 
 Scenario: Show pigeon rescuer map
   Given I am on the survey page
-  When I press "Submit"
+  When I mark the answers for an uninjured pigeon
+  And I press "Submit"
   Then I should see an iframe with source "www.google.com"
-
-Scenario: Show preferred expert contact method
-  Given I am on the survey page
-  When I press "Submit"
-  Then I should see "The bird may be okay on its own"
