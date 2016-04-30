@@ -22,7 +22,10 @@ class SubmissionsController < ApplicationController
       @submission.add_answer(aid)
     end
 
-    if @submission.save
+    if @submission == nil || @submission.answers.count != Question.count
+        flash[:notice] = "Please answer all questions!"
+        redirect_to "/"                
+    elsif @submission.save
       redirect_to submission_path(@submission)
     else
       redirect_to new_submissions_path(@submision)
