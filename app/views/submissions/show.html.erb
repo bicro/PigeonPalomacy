@@ -11,6 +11,9 @@
 
 			<li class="expert-list-item">
 				<%= expert.name %>: <%= expert.email %>
+				<% if expert.phone != ""%>
+				<span class="expert-phone">, <%= expert.phone %></span>
+				<% end %>
 			</li>
 
 			<% end %>

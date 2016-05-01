@@ -29,6 +29,10 @@
   margin-bottom: 0;
 }
 
+.expert-phone {
+  color: #777777;
+}
+
 #expert-introduction, #map-intro {
   margin-bottom: 20px;
 }
